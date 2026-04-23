@@ -1,0 +1,33 @@
+---
+interface Props {
+  as?: 'article' | 'div';
+  class?: string;
+  numbered?: string;
+  title: string;
+  description: string;
+}
+
+const {
+  as: Tag = 'article',
+  class: className = '',
+  numbered,
+  title,
+  description,
+} = Astro.props;
+---
+
+<Tag
+  class:list={[
+    'group p-8 md:p-10 rounded-lg border border-rule bg-paper transition-colors hover:border-sage',
+    className,
+  ]}
+>
+  {numbered && (
+    <div class="font-display text-[0.9375rem] text-sage mb-6 tracking-wider">
+      {numbered}
+    </div>
+  )}
+  <h3 class="font-display text-[1.625rem] mb-3 leading-tight">{title}</h3>
+  <p class="text-[1rem] text-ink-muted leading-relaxed">{description}</p>
+  <slot />
+</Tag>

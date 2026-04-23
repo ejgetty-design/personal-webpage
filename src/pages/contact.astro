@@ -1,0 +1,218 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/Section.astro';
+import Eyebrow from '@/components/Eyebrow.astro';
+import Button from '@/components/Button.astro';
+
+const CALENDLY = 'https://calendly.com/ejgetty/30min';
+
+const FORM_ENDPOINT = 'https://formspree.io/f/maqadbdl';
+---
+
+<BaseLayout
+  title="Contact — Ridgeline Finance"
+  description="Tell us a bit about your business. We'll respond within one business day."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-paper text-ink py-20 md:py-28">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 opacity-[0.06]"
+      style="background-image: url('/ridge-motif.svg'); background-size: cover; background-position: center bottom; background-repeat: no-repeat;"
+    ></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 md:px-10">
+      <Eyebrow>Contact</Eyebrow>
+      <h1
+        class="font-display mt-5"
+        style="font-size: var(--text-display);"
+      >
+        Let's talk.
+      </h1>
+      <p class="mt-6 max-w-[56ch] text-[length:var(--text-lead)] text-ink-muted">
+        Tell us a bit about your business. We'll respond within one business day.
+      </p>
+    </div>
+  </section>
+
+  <!-- Form + details -->
+  <Section bg="paper" size="md">
+    <div class="grid gap-14 md:grid-cols-12">
+      <div class="md:col-span-7">
+        <form
+          id="contact-form"
+          action={FORM_ENDPOINT}
+          method="POST"
+          class="space-y-6"
+        >
+          <div>
+            <label for="name" class="block text-[length:var(--text-small)] font-medium mb-2">
+              Full name
+            </label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              required
+              class="w-full rounded-md border border-rule bg-paper px-4 py-3 text-[1rem] focus:border-forest focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-[length:var(--text-small)] font-medium mb-2">
+              Email
+            </label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-md border border-rule bg-paper px-4 py-3 text-[1rem] focus:border-forest focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="company" class="block text-[length:var(--text-small)] font-medium mb-2">
+              Company <span class="text-ink-muted font-normal">(optional)</span>
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              class="w-full rounded-md border border-rule bg-paper px-4 py-3 text-[1rem] focus:border-forest focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="revenue" class="block text-[length:var(--text-small)] font-medium mb-2">
+              Revenue stage
+            </label>
+            <select
+              id="revenue"
+              name="revenue"
+              required
+              class="w-full rounded-md border border-rule bg-paper px-4 py-3 text-[1rem] focus:border-forest focus:outline-none"
+            >
+              <option value="">Select one…</option>
+              <option value="pre-revenue">Pre-revenue / early stage</option>
+              <option value="under-5m">Under $5M</option>
+              <option value="5m-15m">$5M–$15M</option>
+              <option value="15m-50m">$15M–$50M</option>
+              <option value="50m-plus">$50M+</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block text-[length:var(--text-small)] font-medium mb-2">
+              How can we help?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full rounded-md border border-rule bg-paper px-4 py-3 text-[1rem] focus:border-forest focus:outline-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors select-none px-5 py-3 text-[1rem] bg-forest text-paper hover:bg-forest-hover cursor-pointer"
+            >
+              Send message
+            </button>
+          </div>
+        </form>
+
+        <div
+          id="contact-success"
+          role="status"
+          aria-live="polite"
+          class="hidden mt-4 rounded-md border border-forest/30 bg-cream/60 p-5 text-[1rem]"
+        >
+          Thanks — we'll be in touch within one business day. If it's urgent, call us at <a href="tel:+17206346478" class="underline underline-offset-4">(720) 634-6478</a>.
+        </div>
+
+        <div
+          id="contact-error"
+          role="alert"
+          aria-live="polite"
+          class="hidden mt-4 rounded-md border p-5 text-[0.9375rem]"
+          style="border-color: rgba(180, 60, 40, 0.35); background-color: rgba(180, 60, 40, 0.06); color: #7A2A20;"
+        >
+          Something went wrong sending your message. Please email <a href="mailto:info@ridgelinefinance.co" class="underline underline-offset-4">info@ridgelinefinance.co</a> or call <a href="tel:+17206346478" class="underline underline-offset-4">(720) 634-6478</a>.
+        </div>
+      </div>
+
+      <aside class="md:col-span-5 md:pl-8">
+        <div class="space-y-8">
+          <div>
+            <p class="eyebrow mb-2">Email</p>
+            <a href="mailto:info@ridgelinefinance.co" class="text-[1rem] hover:underline underline-offset-4">
+              info@ridgelinefinance.co
+            </a>
+          </div>
+          <div>
+            <p class="eyebrow mb-2">Phone</p>
+            <a href="tel:+17206346478" class="text-[1rem] hover:underline underline-offset-4">
+              (720) 634-6478
+            </a>
+          </div>
+          <div>
+            <p class="eyebrow mb-2">Location</p>
+            <p class="text-[1rem]">Westminster, CO</p>
+          </div>
+          <div>
+            <p class="eyebrow mb-2">Hours</p>
+            <p class="text-[1rem]">Monday – Friday, 10am – 6pm MT</p>
+          </div>
+          <div class="border-t border-rule pt-6">
+            <p class="eyebrow mb-3">Or book directly</p>
+            <Button href={CALENDLY} variant="secondary" size="md" external>
+              Book a 30-minute consultation
+            </Button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </Section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const success = document.getElementById('contact-success');
+  const errorEl = document.getElementById('contact-error');
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+  if (form && success && errorEl) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.add('hidden');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { Accept: 'application/json' },
+        });
+        if (res.ok) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        throw new Error(`HTTP ${res.status}`);
+      } catch {
+        errorEl.classList.remove('hidden');
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+        }
+      }
+    });
+  }
+</script>

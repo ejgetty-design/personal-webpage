@@ -1,0 +1,68 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-rule bg-paper mt-24">
+  <div class="mx-auto max-w-[1200px] px-6 md:px-10 py-16">
+    <div class="grid gap-10 md:grid-cols-3">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="inline-block" aria-label="Ridgeline Finance home">
+          <img
+            src="/logo-full.png"
+            alt="Ridgeline Finance"
+            width="310"
+            height="310"
+            class="h-36 w-auto -ml-2"
+          />
+        </a>
+        <address class="not-italic text-[0.9375rem] text-ink-muted mt-4 leading-relaxed">
+          Westminster, CO<br />
+          <a href="mailto:info@ridgelinefinance.co" class="hover:text-forest transition-colors">
+            info@ridgelinefinance.co
+          </a><br />
+          <a href="tel:+17206346478" class="hover:text-forest transition-colors">
+            (720) 634-6478
+          </a>
+        </address>
+      </div>
+
+      <!-- Site -->
+      <nav aria-label="Footer site links">
+        <div class="eyebrow mb-4">Site</div>
+        <ul class="space-y-2 text-[0.9375rem]">
+          <li><a href="/" class="hover:text-forest transition-colors">Home</a></li>
+          <li><a href="/services" class="hover:text-forest transition-colors">Services</a></li>
+          <li><a href="/about" class="hover:text-forest transition-colors">About</a></li>
+          <li><a href="/contact" class="hover:text-forest transition-colors">Contact</a></li>
+          <li>
+            <a
+              href="https://calendly.com/ejgetty/30min"
+              class="hover:text-forest transition-colors"
+              target="_blank"
+              rel="noopener"
+            >
+              Book a call
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hours -->
+      <div>
+        <div class="eyebrow mb-4">Hours</div>
+        <p class="text-[0.9375rem] text-ink-muted leading-relaxed">
+          Monday – Friday<br />
+          10am – 6pm MT
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="mt-16 pt-6 border-t border-rule text-[0.8125rem] text-ink-muted flex flex-col sm:flex-row justify-between gap-2"
+    >
+      <p>© {year} Ridgeline Finance. All rights reserved.</p>
+      <p>Controller-level finance for founders.</p>
+    </div>
+  </div>
+</footer>

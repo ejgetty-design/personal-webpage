@@ -1,0 +1,187 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Section from '@/components/Section.astro';
+import Eyebrow from '@/components/Eyebrow.astro';
+import Button from '@/components/Button.astro';
+
+const CALENDLY = 'https://calendly.com/ejgetty/30min';
+
+const services = [
+  {
+    numbered: '01',
+    title: 'Accounting & Close',
+    tagline: 'The monthly rhythm every growing business needs.',
+    body: 'Accurate, reliable monthly financials delivered on time, every time. We run a disciplined close process so your books are an asset — not a liability — as your business grows.',
+    includes: [
+      'Full-cycle monthly close',
+      'Accrual accounting',
+      'Balance sheet reconciliation',
+      'Month-end financial package',
+      'Variance analysis and commentary',
+      'Audit-ready documentation',
+    ],
+    bestFor:
+      'Founders who want financials they can plan from — timely, accurate, and decision-ready.',
+  },
+  {
+    numbered: '02',
+    title: 'Finance Operations',
+    tagline: 'The workflows behind the numbers.',
+    body: "Streamlined AP, AR, and cash operations that reduce friction, improve cash visibility, and keep your team focused on what matters. We don't just produce reports — we improve the operational layer that feeds them.",
+    includes: [
+      'AP/AR workflow design and implementation',
+      'Vendor and customer onboarding processes',
+      'Cash flow forecasting',
+      'Expense management',
+    ],
+    bestFor:
+      'Founders whose finance function works but feels held together with string.',
+  },
+  {
+    numbered: '03',
+    title: 'Systems & Automation',
+    tagline: 'Finance infrastructure built to scale.',
+    body: 'We design, implement, and optimize the systems that let finance keep pace with growth — from your first ERP migration to multi-entity consolidations. Less manual work. Higher accuracy. Infrastructure that grows with you.',
+    includes: [
+      'ERP selection and implementation (NetSuite, QuickBooks)',
+      'System integrations (banks, payment processors, expense tools)',
+      'Automation design (close workflows, approval flows)',
+      'Chart of accounts redesign',
+      'Multi-entity structure and consolidations',
+    ],
+    bestFor:
+      'Companies adding a new entity, integrating disconnected tools, or replacing manual processes with reliable automation.',
+  },
+  {
+    numbered: '04',
+    title: 'FP&A & Reporting',
+    tagline: 'The numbers your leadership team can act on.',
+    body: 'Budgets, forecasts, and board-ready reporting built for founders and leadership teams. We turn the finance function into a decision-making tool, not a backward-looking record.',
+    includes: [
+      'Annual budgeting and quarterly reforecasting',
+      'Board and investor reporting packages',
+      'KPI design and dashboards',
+      'Scenario modeling',
+      'Audit support and preparation',
+    ],
+    bestFor:
+      'Companies preparing to raise, facing their first external audit, or scaling past the point where intuition alone works.',
+  },
+];
+
+const engagementModels = [
+  {
+    title: 'Fractional Controller',
+    body: 'Ongoing, full-scope finance leadership. We run the close, manage the team, and partner with your leadership — as if we were on payroll, without the cost of a full-time hire.',
+  },
+  {
+    title: 'Project-Based',
+    body: 'A defined scope with a defined timeline. Systems implementation, audit presentation, multi-entity setup, books cleanup, first-audit preparation.',
+  },
+];
+---
+
+<BaseLayout
+  title="Services — Ridgeline Finance"
+  description="Four services that work together: Accounting & Close, Finance Operations, Systems & Automation, and FP&A & Reporting."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-paper text-ink py-20 md:py-32">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-0 opacity-[0.06]"
+      style="background-image: url('/ridge-motif.svg'); background-size: cover; background-position: center bottom; background-repeat: no-repeat;"
+    ></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 md:px-10">
+      <Eyebrow>Services</Eyebrow>
+      <h1
+        class="font-display mt-5 max-w-[22ch]"
+        style="font-size: var(--text-display);"
+      >
+        Controller-level finance, delivered as a service.
+      </h1>
+      <p class="mt-6 max-w-[60ch] text-[length:var(--text-lead)] text-ink-muted">
+        Our services work together to give founders books they trust, operations that run autonomously, and real-time financials to support informed decision-making.
+      </p>
+      <div class="mt-10">
+        <Button href={CALENDLY} variant="primary" size="lg" external>
+          Book a consultation
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Four services expanded -->
+  {services.map((s, i) => (
+    <Section bg={i % 2 === 0 ? 'paper' : 'cream'} size="md" id={`service-${s.numbered}`}>
+      <div class="grid gap-12 md:grid-cols-12">
+        <div class="md:col-span-4">
+          <div class="font-display text-[0.9375rem] text-sage tracking-wider mb-4">
+            {s.numbered}
+          </div>
+          <h2 class="font-display leading-tight" style="font-size: var(--text-h1);">
+            {s.title}
+          </h2>
+          <p class="mt-4 font-display text-[1.125rem] text-ink-muted italic max-w-[28ch]">
+            {s.tagline}
+          </p>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-[length:var(--text-lead)] max-w-[60ch]">
+            {s.body}
+          </p>
+          <div class="mt-8">
+            <p class="eyebrow mb-4">What's included</p>
+            <ul class="grid gap-3 sm:grid-cols-2 max-w-[60ch]">
+              {s.includes.map((item) => (
+                <li class="flex items-start gap-3 text-[1rem]">
+                  <span aria-hidden="true" class="mt-[0.5em] h-[5px] w-[5px] shrink-0 rounded-full bg-sage"></span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="mt-8 border-t border-forest/20 pt-5 max-w-[60ch]">
+            <p class="text-[length:var(--text-small)] text-ink-muted">
+              <span class="eyebrow mr-2 inline-block">Best for</span>
+              {s.bestFor}
+            </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  ))}
+
+  <!-- Engagement models -->
+  <Section bg="paper" size="md" id="engagement">
+    <Eyebrow>Engagement models</Eyebrow>
+    <h2 class="font-display mt-4 max-w-[22ch]" style="font-size: var(--text-h1);">
+      How we work together.
+    </h2>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {engagementModels.map((m) => (
+        <div class="rounded-lg border border-rule bg-paper p-8 md:p-10">
+          <h3 class="font-display text-[1.5rem] leading-tight">{m.title}</h3>
+          <p class="mt-4 text-[1rem] text-ink-muted leading-relaxed">{m.body}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section bg="cream" size="md" id="cta">
+    <div class="mx-auto max-w-[640px] text-center">
+      <h2 class="font-display" style="font-size: var(--text-h1);">
+        Not sure which fits?
+      </h2>
+      <p class="mt-5 text-[length:var(--text-lead)] text-ink-muted">
+        Book a call. We'll figure it out together.
+      </p>
+      <div class="mt-8 flex justify-center">
+        <Button href={CALENDLY} variant="primary" size="lg" external>
+          Book a consultation
+        </Button>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>
