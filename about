@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Getty — Finance Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Raleway:wght@200;300&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest:      #3D5E4E;
+    --forest-mid:  #5A7D6A;
+    --forest-light:#7A9E8C;
+    --moss:        #8FA888;
+    --gold:        #C9963A;
+    --gold-light:  #E8B86D;
+    --gold-pale:   #FDF3E3;
+    --mauve:       #A07880;
+    --mauve-light: #C4A0A8;
+    --mauve-pale:  #F5ECEE;
+    --blush:       #EDD5C8;
+    --terracotta:  #C47A5A;
+    --cream:       #FDFAF4;
+    --cream-mid:   #F8F0E6;
+    --cream-dark:  #EFE3D0;
+    --text-primary:#2A1F18;
+    --text-secondary:#5C4438;
+    --text-muted:  #9C8878;
+    --border:      #E2D4C2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--cream);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── MOUNTAIN BANNER ─────────────────────────────── */
+  .banner {
+    width: 100%;
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    background: #F5ECEE;
+  }
+
+  .banner-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .banner-location {
+    font-family: 'Nunito', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-top: 10px;
+  }
+
+  .banner-name {
+    font-family: 'Raleway', sans-serif;
+    font-size: 110px;
+    font-weight: 200;
+    color: var(--forest);
+    line-height: 1.1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 20px rgba(160,120,128,0.25);
+    padding-bottom: 0.05em;
+  }
+
+  /* ── PAGE WRAPPER ────────────────────────────────── */
+  .page { max-width: 880px; margin: 0 auto; padding: 0 2rem 6rem; }
+
+  /* ── INTRO CARD ──────────────────────────────────── */
+  .intro-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-top: none;
+    padding: 2.5rem 2.5rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .intro-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid var(--cream-dark);
+    box-shadow: 0 0 0 6px var(--blush), 0 8px 24px rgba(160,120,128,0.2);
+    flex-shrink: 0;
+  }
+
+  .intro-right { flex: 1; min-width: 0; }
+
+  /* Headline card as its own moment */
+  .headline-card {
+    margin: 0 2rem 1.5rem;
+    padding: 1.75rem 1.75rem;
+    background: linear-gradient(135deg, var(--mauve-pale), var(--blush));
+    border-radius: 16px;
+    border: 1px solid var(--mauve-light);
+    text-align: center;
+  }
+
+  .headline-card-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Footer row: tag + links */
+  .intro-footer {
+    padding: 0 2.5rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0;
+  }
+
+  .intro-right {}
+
+  .intro-creds {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    margin-bottom: 8px;
+  }
+
+  .intro-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--mauve);
+  }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--cream-mid);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  .tag.green {
+    background: var(--mauve-pale);
+    border-color: var(--mauve-light);
+    color: var(--mauve);
+  }
+
+  .intro-links { display: flex; gap: 10px; }
+
+  .link-pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 1.5px solid var(--forest);
+    color: var(--forest);
+    transition: all 0.15s;
+  }
+  .link-pill:hover { background: var(--forest); color: var(--cream); }
+  .link-pill.outline { border-color: var(--border); color: var(--text-muted); }
+  .link-pill.outline:hover { border-color: var(--forest-light); color: var(--forest); background: transparent; }
+
+  /* ── SECTIONS ────────────────────────────────────── */
+  .section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.75rem;
+  }
+
+  .section-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 200;
+    color: var(--forest);
+    line-height: 1.2;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+
+  .section-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--border), transparent);
+  }
+
+  /* ── WHO I AM BIO ────────────────────────────────── */
+  .bio-card {
+    background: linear-gradient(135deg, var(--mauve-pale) 0%, var(--cream-mid) 60%, var(--blush) 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .bio-card::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 140px;
+    color: var(--mauve-light);
+    opacity: 0.2;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .bio-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    position: relative;
+    z-index: 1;
+  }
+
+  .bio-text p { margin-bottom: 1rem; }
+  .bio-text p:last-child { margin-bottom: 0; }
+
+  /* ── SKILLS ──────────────────────────────────────── */
+  .bring-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .bring-intro {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding: 1.75rem;
+    background: linear-gradient(135deg, var(--mauve-pale), var(--blush));
+    border-radius: 16px;
+    border: 1px solid var(--mauve-light);
+  }
+
+  .bring-intro em {
+    font-style: normal;
+    color: var(--mauve);
+    border-bottom: 2px solid var(--mauve-light);
+  }
+
+  .skills-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .skill-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid var(--moss);
+    transition: border-left-color 0.2s, box-shadow 0.2s;
+  }
+  .skill-card:hover {
+    border-left-color: var(--mauve);
+    box-shadow: 0 2px 12px rgba(160,120,128,0.12);
+  }
+
+  .skill-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--forest);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .skill-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  /* ── STORY PLAYER — Single card, click to advance ── */
+  .story-player {
+    background: var(--forest);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(44,74,62,0.2);
+  }
+
+  /* Chapter pips at top — one per accomplishment */
+  .story-chapters {
+    display: flex;
+    gap: 6px;
+    padding: 1.25rem 1.5rem 0.75rem;
+  }
+
+  .story-chapter {
+    flex: 1;
+    height: 3px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .story-chapter:hover { background: rgba(255,255,255,0.3); }
+
+  .story-chapter-fill {
+    height: 100%;
+    background: var(--mauve-light);
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  /* Chapter label row */
+  .story-chapter-label {
+    padding: 0.5rem 1.5rem 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mauve-light);
+    transition: opacity 0.4s ease;
+  }
+
+  /* Stage where text appears */
+  .story-stage {
+    flex: 1;
+    padding: 1.5rem 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 240px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .story-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 26px;
+    line-height: 1.55;
+    color: #fff;
+    text-align: left;
+    max-width: 640px;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .story-text.fade-out {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .story-text.fade-in {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* Question style — italic mauve */
+  .story-text.is-question {
+    font-style: italic;
+    color: var(--mauve-light);
+    font-size: 24px;
+  }
+
+  /* Punchline style — bigger, stronger */
+  .story-text.is-punchline {
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+    color: #fff;
+  }
+
+  .story-text strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Tap hint */
+  .story-tap-hint {
+    font-family: 'Raleway', sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    margin-top: 1rem;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Footer controls */
+  .story-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 1.5rem 1.1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .story-counter {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+  }
+
+  .story-btns { display: flex; gap: 8px; align-items: center; }
+
+  .story-btn {
+    height: 32px;
+    padding: 0 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+  }
+  .story-btn:hover { border-color: var(--mauve-light); color: var(--mauve-light); }
+  .story-btn:disabled { opacity: 0.2; cursor: default; }
+  .story-btn:disabled:hover { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+
+  /* ── CAREER ──────────────────────────────────────── */
+  .career-list { display: flex; flex-direction: column; gap: 0; }
+
+  .career-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    transition: background 0.15s;
+    flex-wrap: wrap;
+  }
+  .career-row:hover { background: var(--cream-mid); }
+
+  .career-left {}
+
+  .career-role {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+  }
+
+  .career-company {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+  }
+
+  .career-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  .career-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 1.25rem;
+  }
+
+  /* ── EDUCATION ───────────────────────────────────── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .edu-card {
+    background: var(--cream-mid);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-top: 3px solid var(--moss);
+  }
+
+  .edu-card:first-child { border-top-color: var(--mauve); }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+
+  .edu-school {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .edu-highlights { display: flex; flex-direction: column; gap: 4px; }
+
+  .edu-highlight {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+  }
+  .edu-highlight::before {
+    content: '✦';
+    font-size: 7px;
+    color: var(--mauve);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── CONTACT BAR ─────────────────────────────────── */
+  .contact-bar {
+    background: var(--forest);
+    border-radius: 14px;
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 32px rgba(44,74,62,0.2);
+  }
+
+  .contact-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+
+  .contact-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+    max-width: 440px;
+  }
+
+  .contact-btn {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 12px 28px;
+    background: var(--mauve);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    white-space: nowrap;
+    transition: background 0.15s, transform 0.15s;
+    display: inline-block;
+  }
+  .contact-btn:hover { background: var(--mauve-light); transform: translateY(-1px); }
+
+  /* ── RESPONSIVE ──────────────────────────────────── */
+  @media (max-width: 640px) {
+    .banner { height: 280px; }
+    .banner-name { font-size: 50px; letter-spacing: 0.16em; }
+    .banner-name .banner-first,
+    .banner-name .banner-last { display: inline; }
+    .banner-location { font-size: 8px; letter-spacing: 0.24em; }
+    .intro-card {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.25rem;
+      padding: 2rem 1.5rem 1.25rem;
+    }
+    .intro-photo { width: 130px; height: 130px; }
+    .headline-card { margin: 0 1rem 1.25rem; padding: 1.5rem 1.25rem; }
+    .headline-card-text { font-size: 16px; }
+    .intro-footer {
+      flex-direction: column;
+      padding: 0 1.5rem 2rem;
+      gap: 1rem;
+    }
+    .bring-layout { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── MOUNTAIN BANNER ── -->
+<div class="banner">
+  <svg class="banner-mountains" viewBox="0 0 1440 340" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#F5ECEE"/>
+        <stop offset="60%" stop-color="#EDD5C8"/>
+        <stop offset="100%" stop-color="#E8C2B0"/>
+      </linearGradient>
+      <linearGradient id="mtnFar" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#C4A0A8"/>
+        <stop offset="100%" stop-color="#A07880"/>
+      </linearGradient>
+      <linearGradient id="mtnMid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#8B5D6E"/>
+        <stop offset="100%" stop-color="#6D4856"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Sky -->
+    <rect width="1440" height="340" fill="url(#sky)"/>
+    <!-- Soft sun -->
+    <circle cx="1100" cy="90" r="40" fill="#FDFAF4" opacity="0.55"/>
+
+    <!-- Far mountains -->
+    <path d="M0,220 L120,140 L220,180 L340,115 L460,170 L580,125 L680,160 L780,95 L880,145 L980,115 L1100,160 L1220,125 L1320,165 L1440,140 L1440,340 L0,340 Z" fill="url(#mtnFar)" opacity="0.55"/>
+
+    <!-- Mid mountains -->
+    <path d="M0,270 L80,195 L180,240 L280,170 L400,215 L500,155 L600,195 L720,145 L820,185 L920,150 L1040,195 L1160,160 L1280,200 L1380,175 L1440,210 L1440,340 L0,340 Z" fill="url(#mtnMid)" opacity="0.8"/>
+  </svg>
+  <div class="banner-overlay"></div>
+  <div class="banner-text">
+    <div class="banner-name"><span class="banner-first">Emma</span> <span class="banner-last">Getty</span></div>
+    <div class="banner-location">Boulder, Colorado</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- ── INTRO CARD ── -->
+  <div class="intro-card">
+    <img class="intro-photo" src="IMG_2479.png" alt="Emma Getty" />
+    <div class="intro-right">
+      <div style="font-family: 'Raleway', sans-serif; font-size: 16px; font-weight: 200; color: var(--mauve); margin-bottom: 0.5rem; line-height: 1; letter-spacing: 0.18em; text-transform: uppercase;">Hi, I'm Emma —</div>
+      <div class="intro-creds">CPA &nbsp;·&nbsp; MBA &nbsp;·&nbsp; Director of Finance & Accounting</div>
+      <div style="margin-top: 0.75rem;"><span class="tag green">Open to new roles</span></div>
+    </div>
+  </div>
+
+  <!-- ── HEADLINE CARD ── -->
+  <div class="headline-card">
+    <p class="headline-card-text">Accounting rigor. Operational creativity. Finance leadership built on automation, optimization, and first-principles thinking.</p>
+  </div>
+
+  <!-- ── LINKS ROW ── -->
+  <div class="intro-footer">
+    <div class="intro-links">
+      <a class="link-pill" href="https://www.linkedin.com/in/emma-getty-cpa-mba" target="_blank">LinkedIn ↗</a>
+      <a class="link-pill outline" href="mailto:ejgetty@gmail.com">ejgetty@gmail.com</a>
+    </div>
+  </div>
+
+  <!-- ── WHO I AM ── -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✨</span>
+      <span class="section-title">Who I am</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="bio-card">
+      <div class="bio-text">
+        <p>I'm a builder by nature — and I don't stop once something works. I'm always looking for the next iteration, the next improvement, the thing that could run just a little smoother. It's not restlessness, it's how I'm wired. Calm in chaos, curious by default.</p>
+        <p>I care about what I build and who I build it for. I've spent my career in health, food, and mission-driven businesses because I want the work to matter — not just to the bottom line, but to the world.</p>
+        <p>Professionally, I turn financial chaos into clarity — the processes, the systems, the team, the whole thing. I'm drawn to companies at an inflection point, the ones growing faster than their infrastructure, where there's real work to be done and no playbook to follow.</p>
+        <p>When I'm not in spreadsheets, I'm in the mountains. Boulder isn't just where I live — it's a reflection of how I work: always moving, always looking for the next ridge.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHAT I BRING ── -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✨</span>
+      <span class="section-title">What I bring</span>
+      <div class="section-rule"></div>
+    </div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:1.5rem; font-style:italic;">Here's what that looks like in practice</p>
+    <div class="bring-layout">
+      <div class="bring-intro">
+        I am at my best when given a <em>complex problem</em>, a team to lead, and the trust to build the right solution — not just maintain the existing one.
+      </div>
+      <div class="skills-list">
+        <div class="skill-card">
+          <div class="skill-name">Build & systems</div>
+          <div class="skill-desc">I've never inherited a process I didn't eventually rebuild — hands-on across NetSuite, QuickBooks, Oracle, SAP, Ramp, and FloQast. There's always a better way.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Leadership & communication</div>
+          <div class="skill-desc">I build teams that don't need me to function — and I translate the details into the story. CEOs have told me so directly.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">FP&A & modeling</div>
+          <div class="skill-desc">Budgets, forecasts, cash flow, revenue recognition — built from scratch, every time.</div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-name">Audit & compliance</div>
+          <div class="skill-desc">12+ audits led. I don't just survive them — I build the controls that make them easy.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── KEY ACCOMPLISHMENTS ── -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✨</span>
+      <span class="section-title">Key accomplishments</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="story-player">
+      <!-- Chapter pips -->
+      <div class="story-chapters">
+        <div class="story-chapter" onclick="goToChapter(0)"><div class="story-chapter-fill" id="chFill0"></div></div>
+        <div class="story-chapter" onclick="goToChapter(1)"><div class="story-chapter-fill" id="chFill1"></div></div>
+        <div class="story-chapter" onclick="goToChapter(2)"><div class="story-chapter-fill" id="chFill2"></div></div>
+        <div class="story-chapter" onclick="goToChapter(3)"><div class="story-chapter-fill" id="chFill3"></div></div>
+      </div>
+      <!-- Chapter label -->
+      <div class="story-chapter-label" id="chapterLabel">Chapter 1 · CPA + MBA</div>
+      <!-- Stage -->
+      <div class="story-stage" id="storyStage" onclick="storyAdvance()">
+        <p class="story-text" id="storyText"></p>
+      </div>
+      <!-- Controls -->
+      <div class="story-controls">
+        <div class="story-counter" id="storyCounter">1 of 5</div>
+        <div class="story-btns">
+          <button class="story-btn" id="storyBack" onclick="storyBack()">← Back</button>
+          <button class="story-btn" id="storyNext" onclick="storyAdvance()">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CAREER ── -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✨</span>
+      <span class="section-title">Career</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="career-list">
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Director, Finance & Accounting</div><div class="career-company">OneTogether Solutions · Boulder, CO</div></div>
+        <div class="career-date">2023 – Present</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Founder</div><div class="career-company">Ridgeline Finance · Boulder, CO</div></div>
+        <div class="career-date">2026 – Present</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Director / Controller</div><div class="career-company">AVL Growth Partners · Boulder, CO</div></div>
+        <div class="career-date">2020 – 2023</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Director of Finance</div><div class="career-company">Blue Moose of Boulder · Lafayette, CO</div></div>
+        <div class="career-date">2019 – 2020</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Financial Analyst</div><div class="career-company">Informa · Boulder, CO</div></div>
+        <div class="career-date">2018 – 2019</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Accountant</div><div class="career-company">Purely Elizabeth · Boulder, CO</div></div>
+        <div class="career-date">2017 – 2018</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Capital Budget Analyst</div><div class="career-company">Maryland Dept. of Budget & Management · Baltimore, MD</div></div>
+        <div class="career-date">2015 – 2017</div>
+      </div>
+      <div class="career-divider"></div>
+      <div class="career-row">
+        <div class="career-left"><div class="career-role">Staff Accountant</div><div class="career-company">Sinclair Broadcast Group · Hunt Valley, MD</div></div>
+        <div class="career-date">2013 – 2015</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── EDUCATION ── -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">✨</span>
+      <span class="section-title">Education</span>
+      <div class="section-rule"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Master of Business Administration</div>
+        <div class="edu-school">CU Leeds School of Business · 2018–2020 · GPA 3.71</div>
+        <div class="edu-highlights">
+          <span class="edu-highlight">Entrepreneurship Certificate</span>
+          <span class="edu-highlight">2nd place, Women Founders' Competition (NVC)</span>
+          <span class="edu-highlight">Accounting Tutor · MBArk · Organics & Naturals Club</span>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">BS Business Administration — Accounting</div>
+        <div class="edu-school">UNC Wilmington · 2010–2013 · GPA 3.74</div>
+        <div class="edu-highlights">
+          <span class="edu-highlight">Chancellor's Achievement Award (2 semesters)</span>
+          <span class="edu-highlight">Dean's List (5 semesters)</span>
+          <span class="edu-highlight">Study abroad: Euromed School of Management, Marseille</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CONTACT ── -->
+  <div class="section" style="border-bottom:none; padding-bottom:0;">
+    <div class="contact-bar">
+      <div>
+        <div class="contact-heading">Let's connect.</div>
+        <div class="contact-sub">If your company is growing faster than your financial infrastructure, that's exactly where I do my best work.</div>
+      </div>
+      <a class="contact-btn" href="mailto:ejgetty@gmail.com">Get in touch</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── STORY PLAYER — Paced single-card reveal ──
+const storyArc = [
+  { chapter: "Chapter 1 · CPA + MBA", lines: [
+    { text: '"She has the credentials — but did she earn them the hard way?"', type: 'question' },
+    { text: 'I passed all four CPA exams while working full time.', type: 'body' },
+    { text: 'Then earned my MBA from CU Leeds while running finance for a $15M company.', type: 'body' },
+    { text: "I didn't take a break to go back to school. I did both at once.", type: 'body' },
+    { text: "Because that's how I'm wired.", type: 'punchline' }
+  ]},
+  { chapter: "Chapter 2 · Blue Moose Costco Deal", lines: [
+    { text: '"We just landed a $6M Costco deal. Can we actually execute on this?"', type: 'question' },
+    { text: "The real question wasn't whether to take it — it was whether we could survive it.", type: 'body' },
+    { text: 'I built the financial model that answered that.', type: 'body' },
+    { text: 'Demand planning, inventory, spoilage, cash flow — the whole picture.', type: 'body' },
+    { text: 'The company grew from <strong>$8M to $15M</strong> that year.', type: 'body' },
+    { text: "I wasn't in sales. I was the reason sales was possible.", type: 'punchline' }
+  ]},
+  { chapter: "Chapter 3 · AVL — Breadth Across Industries", lines: [
+    { text: '"How do you build finance for any company?"', type: 'question' },
+    { text: 'At AVL, I served <strong>15 clients</strong> across 2 years, owning anywhere from 5–8 books at a time.', type: 'body' },
+    { text: 'CPG, SaaS, manufacturing, cannabis startups — all different stages, all different problems to solve.', type: 'body' },
+    { text: 'I led cash-to-accrual conversions, system implementations, and establishing the structure of the control environment.', type: 'body' },
+    { text: "One client's monthly close went from <strong>4 weeks to 1</strong>.", type: 'body' },
+    { text: "The skill isn't industry knowledge. It's reading a company fast and building what it needs.", type: 'punchline' }
+  ]},
+  { chapter: "Chapter 4 · OneTogether — Scale", lines: [
+    { text: '"We need to manage five companies now. Can you build the infrastructure?"', type: 'question' },
+    { text: 'When I joined OneTogether, there was one entity. Now there are five.', type: 'body' },
+    { text: 'I built the financial infrastructure that supported that growth.', type: 'body' },
+    { text: 'Chart of accounts, consolidated reporting, audit-ready close, board-level snapshots.', type: 'body' },
+    { text: 'There was no playbook.', type: 'body' },
+    { text: 'I wrote it.', type: 'punchline' }
+  ]}
+];
+
+let currentChapter = 0;
+let currentLine = 0;
+let storyAnimating = false;
+
+const storyTextEl = document.getElementById('storyText');
+const chapterLabelEl = document.getElementById('chapterLabel');
+const counterEl = document.getElementById('storyCounter');
+const backBtn = document.getElementById('storyBack');
+const nextBtn = document.getElementById('storyNext');
+
+function renderStory() {
+  const chapter = storyArc[currentChapter];
+  const line = chapter.lines[currentLine];
+  const totalLines = chapter.lines.length;
+
+  // Update chapter label
+  chapterLabelEl.textContent = chapter.chapter;
+
+  // Update progress pips
+  for (let i = 0; i < storyArc.length; i++) {
+    const fill = document.getElementById('chFill' + i);
+    if (i < currentChapter) fill.style.width = '100%';
+    else if (i === currentChapter) {
+      const pct = ((currentLine + 1) / totalLines) * 100;
+      fill.style.width = pct + '%';
+    } else fill.style.width = '0%';
+  }
+
+  // Update text with type styling
+  storyTextEl.classList.remove('is-question', 'is-punchline');
+  if (line.type === 'question') storyTextEl.classList.add('is-question');
+  else if (line.type === 'punchline') storyTextEl.classList.add('is-punchline');
+  storyTextEl.innerHTML = line.text;
+
+  // Update counter
+  counterEl.textContent = (currentLine + 1) + ' of ' + totalLines;
+
+  // Disable back at very start
+  backBtn.disabled = (currentChapter === 0 && currentLine === 0);
+
+  // Next button text changes on last line of last chapter
+  if (currentChapter === storyArc.length - 1 && currentLine === totalLines - 1) {
+    nextBtn.textContent = '↻ Restart';
+  } else {
+    nextBtn.textContent = 'Next →';
+  }
+}
+
+function storyAdvance() {
+  if (storyAnimating) return;
+  const totalLines = storyArc[currentChapter].lines.length;
+
+  // If at end of everything, restart
+  if (currentChapter === storyArc.length - 1 && currentLine === totalLines - 1) {
+    fadeAndUpdate(() => {
+      currentChapter = 0;
+      currentLine = 0;
+    });
+    return;
+  }
+
+  fadeAndUpdate(() => {
+    if (currentLine < totalLines - 1) {
+      currentLine++;
+    } else {
+      currentChapter++;
+      currentLine = 0;
+    }
+  });
+}
+
+function storyBack() {
+  if (storyAnimating) return;
+  if (currentChapter === 0 && currentLine === 0) return;
+
+  fadeAndUpdate(() => {
+    if (currentLine > 0) {
+      currentLine--;
+    } else {
+      currentChapter--;
+      currentLine = storyArc[currentChapter].lines.length - 1;
+    }
+  });
+}
+
+function goToChapter(chapterIndex) {
+  if (storyAnimating || chapterIndex === currentChapter) return;
+  fadeAndUpdate(() => {
+    currentChapter = chapterIndex;
+    currentLine = 0;
+  });
+}
+
+function fadeAndUpdate(updateFn) {
+  storyAnimating = true;
+  storyTextEl.classList.add('fade-out');
+  setTimeout(() => {
+    updateFn();
+    renderStory();
+    storyTextEl.classList.remove('fade-out');
+    storyTextEl.classList.add('fade-in');
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        storyTextEl.classList.remove('fade-in');
+      });
+    });
+    setTimeout(() => { storyAnimating = false; }, 450);
+  }, 350);
+}
+
+// Initial render
+renderStory();
+</script>
+</body>
+</html>
