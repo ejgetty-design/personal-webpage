@@ -169,8 +169,8 @@
   }
 
   .hero-photo {
-    width: 110px;
-    height: 110px;
+    width: 330px;
+    height: 330px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -211,24 +211,28 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--sage-deep);
-    background: var(--sage-pale);
+    background: transparent;
+    border: 1.5px solid var(--sage-deep);
     padding: 5px 12px;
     border-radius: 999px;
   }
 
   .hero-title {
-    font-family: 'Source Serif 4', serif;
-    font-size: 50px;
-    font-weight: 400;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: var(--rock);
+    border-radius: 999px;
+    padding: 6px 18px;
+    line-height: 1.5;
     margin-bottom: 2rem;
     max-width: 560px;
   }
-  .hero-title em {
-    font-style: italic;
-    color: var(--sage-deep);
-  }
+  .hero-title em { font-style: normal; color: #fff; }
 
   .hero-deck {
     font-size: 17px;
