@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Getty — My Work</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper:     #EBD2C8;
+    --paper-deep:#DFC0B4;
+    --surface:   #F2DDD2;
+    --ink:       #2A2722;
+    --ink-mute:  #6B6557;
+    --ink-faint: #A39C8B;
+    --rule:      #D4B8AD;
+    --sage:      #8A9A84;
+    --sage-deep: #6C7E68;
+    --sage-pale: #DDE3D6;
+    --rock:      #B97A5E;
+    --rock-deep: #8F5A42;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    /* Same topographic texture as About — concentric loops + flowing contours + paper feel */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%238F5A42' stroke-width='0.5' opacity='0.22' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M 130 140 Q 165 122 195 138 Q 215 162 198 188 Q 168 200 138 188 Q 118 165 130 140 Z'/%3E%3Cpath d='M 110 125 Q 158 100 210 122 Q 235 158 215 200 Q 165 218 122 200 Q 95 165 110 125 Z'/%3E%3Cpath d='M 90 110 Q 152 78 225 108 Q 256 152 235 215 Q 165 240 105 215 Q 70 168 90 110 Z'/%3E%3Cpath d='M 430 380 Q 460 368 480 385 Q 488 405 472 420 Q 445 425 425 415 Q 418 395 430 380 Z'/%3E%3Cpath d='M 412 365 Q 458 348 495 372 Q 510 405 490 432 Q 442 442 412 428 Q 398 398 412 365 Z'/%3E%3Cpath d='M 392 348 Q 455 325 510 358 Q 532 402 505 445 Q 440 460 395 442 Q 375 400 392 348 Z'/%3E%3Cpath d='M 470 90 Q 495 80 515 95 Q 522 115 508 128 Q 482 132 465 122 Q 458 105 470 90 Z'/%3E%3Cpath d='M 455 75 Q 492 60 528 82 Q 540 110 522 138 Q 482 145 455 132 Q 442 108 455 75 Z'/%3E%3Cpath d='M 0 280 Q 80 268 165 282 Q 245 298 318 285 Q 395 270 478 290 Q 545 305 600 295'/%3E%3Cpath d='M 0 320 Q 75 305 158 322 Q 240 338 315 320 Q 395 305 482 328 Q 545 345 600 335'/%3E%3Cpath d='M 0 510 Q 90 495 175 510 Q 260 525 340 508 Q 425 492 510 510 Q 565 525 600 515'/%3E%3Cpath d='M 0 545 Q 80 532 168 548 Q 252 562 332 545 Q 420 528 508 548 Q 568 562 600 552'/%3E%3Cpath d='M 0 25 Q 95 12 185 25 Q 270 38 350 22 Q 435 8 525 25 Q 575 38 600 30'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='tbase'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.2' intercept='-0.15'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cfilter id='tfine'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch' seed='18'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23tbase)' opacity='0.08' fill='%238F5A42'/%3E%3Crect width='600' height='600' filter='url(%23tfine)' opacity='0.05'/%3E%3C/svg%3E");
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── HEADER ── */
+  .top {
+    padding: 1.5rem 0 0;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.25rem;
+    gap: 2rem;
+  }
+  .top-mark {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    flex-shrink: 0;
+  }
+  .top-mark a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .top-nav {
+    display: flex;
+    gap: 1.75rem;
+    align-items: baseline;
+    flex: 1;
+    justify-content: center;
+  }
+  .top-nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-mute);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover {
+    color: var(--ink);
+  }
+  .top-nav a.active {
+    color: var(--ink);
+    border-bottom-color: var(--rock);
+  }
+  .top-meta {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    max-width: 720px;
+    margin: 0 auto 4rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .page-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--sage-deep);
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .page-eyebrow::before,
+  .page-eyebrow::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+  .page-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    margin-bottom: 1rem;
+  }
+  .page-title em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+  .page-deck {
+    font-size: 16px;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .section:first-of-type { border-top: none; }
+
+  .section-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--sage-deep);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  .section-h {
+    font-family: 'Source Serif 4', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    margin-bottom: 1rem;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .section-h em { font-style: italic; color: var(--sage-deep); }
+
+  .section-deck {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-mute);
+    line-height: 1.55;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  /* ── EMBEDDED SCHEMATIC ── */
+  .schematic-stage {
+    width: 100%;
+    margin: 0 auto;
+    /* No card — sits directly on the page background */
+  }
+  .schematic-stage svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ── CASE STUDIES ── */
+  .case-intro {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    margin: 0 auto 3rem;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .cases {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .case {
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .case:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .case-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rock);
+    margin-bottom: 0.75rem;
+  }
+
+  .case-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    margin-bottom: 0.6rem;
+  }
+  .case-title em { font-style: italic; color: var(--sage-deep); }
+
+  .case-tagline {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink-mute);
+    margin-bottom: 2rem;
+    line-height: 1.55;
+  }
+
+  .case-block {
+    margin-bottom: 1.75rem;
+  }
+  .case-block:last-child { margin-bottom: 0; }
+
+  .case-block-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .case-block-label::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--sage);
+  }
+
+  .case-block-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .case-block-body p { margin-bottom: 0.75rem; }
+  .case-block-body p:last-child { margin-bottom: 0; }
+
+  .case-screenshot {
+    margin: 1.5rem 0;
+    background: rgba(242, 221, 210, 0.6);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: var(--ink-faint);
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .placeholder {
+    background: rgba(185, 122, 94, 0.12);
+    border: 1px dashed var(--rock);
+    color: var(--rock-deep);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── METRICS CALLOUT (replaces screenshot for some cases) ── */
+  .case-metrics {
+    margin: 1.5rem 0;
+    background: rgba(242, 221, 210, 0.5);
+    border-left: 3px solid var(--rock);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .case-metric {
+    text-align: left;
+  }
+  .case-metric-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-bottom: 0.5rem;
+  }
+  .case-metric-value {
+    font-family: 'Source Serif 4', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--rock-deep);
+    line-height: 1.15;
+    letter-spacing: -0.012em;
+  }
+  .case-metric-value em {
+    font-style: italic;
+    color: var(--ink-faint);
+    font-size: 18px;
+    margin: 0 4px;
+    font-weight: 300;
+  }
+  .case-metric-after {
+    color: var(--rock-deep);
+    font-weight: 500;
+  }
+
+  /* ── STRUCTURAL DIAGRAM (mini SVG, matches schematic style) ── */
+  .case-diagram {
+    margin: 1.5rem 0;
+    background: rgba(242, 221, 210, 0.4);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+  }
+  .case-diagram svg {
+    display: block;
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+    height: auto;
+  }
+  .case-diagram-caption {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-faint);
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  /* ── PULL QUOTE ── */
+  .closing-quotes {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 4rem;
+  }
+  .closing-quotes .pullquote {
+    margin: 2rem auto;
+  }
+
+  .pullquote {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem 2rem 2rem 3rem;
+    border-left: 2px solid var(--rock);
+    position: relative;
+  }
+  .pullquote::before {
+    content: '\201C';
+    position: absolute;
+    left: 0.75rem;
+    top: 0.5rem;
+    font-family: 'Source Serif 4', serif;
+    font-size: 56px;
+    color: var(--rock);
+    opacity: 0.4;
+    line-height: 1;
+  }
+  .pullquote-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 22px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    margin-bottom: 1rem;
+  }
+  .pullquote-attr {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--sage-deep);
+  }
+  .pullquote-attr-name {
+    color: var(--ink);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 0 4rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .page { padding: 0 1.25rem; }
+    .top { margin-bottom: 2.5rem; gap: 1rem; }
+    .top-meta { display: none; }
+    .top-nav { gap: 1.25rem; }
+    .top-nav a { font-size: 11px; letter-spacing: 0.14em; }
+    .page-hero { margin-bottom: 2.5rem; padding: 1rem 0; }
+    .page-title { font-size: 30px; }
+    .page-deck { font-size: 15px; }
+    .section { padding: 2.5rem 0; }
+    .section-h { font-size: 24px; }
+    .section-deck { font-size: 16px; margin-bottom: 2rem; }
+    .case { margin-bottom: 2.5rem; padding-bottom: 2.5rem; }
+    .case-title { font-size: 22px; }
+    .case-tagline { font-size: 15px; }
+    .case-screenshot { padding: 2rem 1rem; }
+    .case-intro { font-size: 16px; margin-bottom: 2rem; }
+    .case-metrics { grid-template-columns: 1fr; gap: 1rem; padding: 1.25rem; }
+    .case-metric-value { font-size: 20px; }
+    .case-diagram { padding: 1.25rem 0.75rem; }
+    .pullquote { margin: 2.5rem auto; padding: 1.25rem 1.25rem 1.25rem 2rem; }
+    .pullquote-text { font-size: 18px; }
+    .pullquote::before { font-size: 40px; left: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="top">
+    <div class="top-mark"><a href="/">Emma Getty</a></div>
+    <nav class="top-nav">
+      <a href="/">About</a>
+      <a href="/work" class="active">My Work</a>
+    </nav>
+    <div class="top-meta">Boulder, Colorado</div>
+  </header>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="page-hero">
+    <div class="page-eyebrow">My Work</div>
+    <h1 class="page-title">The systems and the <em>stories</em> behind them.</h1>
+    <p class="page-deck">A look at the tools I work in every day, and a few of the projects where they came together.</p>
+  </section>
+
+  <!-- ═══════ SECTION 1 · SYSTEMS MASTERED ═══════ -->
+  <section class="section">
+    <div class="section-eyebrow">Section One · Systems Mastered</div>
+    <h2 class="section-h">An integrated system for <em>clean close</em> and clear reporting.</h2>
+    <p class="section-deck">Every tool feeds the ledger. The ledger feeds every decision.</p>
+
+    <div class="schematic-stage">
+      <svg viewBox="0 30 1400 760" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Hub gradient — terracotta rock, anchoring the system -->
+          <linearGradient id="hubGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#B97A5E"/>
+            <stop offset="100%" stop-color="#8F5A42"/>
+          </linearGradient>
+          <filter id="hubShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+            <feOffset dx="0" dy="3"/>
+            <feComponentTransfer><feFuncA type="linear" slope="0.18"/></feComponentTransfer>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <!-- Main flow arrows — sage -->
+          <marker id="mainArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#6C7E68"/>
+          </marker>
+          <!-- Loop arrows — terracotta -->
+          <marker id="loopArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#B97A5E"/>
+          </marker>
+        </defs>
+
+        <!-- ═══ PROFICIENCY LEGEND (centered at top) ═══ -->
+        <g transform="translate(580, 50)">
+          <text x="120" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="3" fill="#A39C8B" font-weight="600">PROFICIENCY</text>
+          <circle cx="4" cy="22" r="3" fill="#8F5A42"/>
+          <text x="14" y="26" font-family="Source Serif 4, serif" font-size="11" fill="#2A2722" font-style="italic">Expert</text>
+          <circle cx="80" cy="22" r="3" fill="#6C7E68"/>
+          <text x="90" y="26" font-family="Source Serif 4, serif" font-size="11" fill="#2A2722" font-style="italic">Proficient</text>
+          <circle cx="180" cy="22" r="3" fill="#A39C8B"/>
+          <text x="190" y="26" font-family="Source Serif 4, serif" font-size="11" fill="#2A2722" font-style="italic">Familiar</text>
+        </g>
+
+        <!-- ═══ STAGE 1: SPEND · AP · TAX ═══ -->
+        <g>
+          <rect x="40" y="150" width="195" height="210" rx="10" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+          <rect x="40" y="150" width="195" height="34" fill="#DDE3D6" stroke="#D4B8AD" stroke-width="1"/>
+          <text x="137" y="173" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2.5" fill="#2A2722" font-weight="600">SPEND · AP · TAX</text>
+
+          <!-- Receipt icon -->
+          <g transform="translate(113, 200)" fill="none" stroke="#8F5A42" stroke-width="1.4">
+            <path d="M 4 0 L 44 0 L 44 36 L 40 40 L 36 36 L 32 40 L 28 36 L 24 40 L 20 36 L 16 40 L 12 36 L 8 40 L 4 36 Z"/>
+            <line x1="10" y1="10" x2="38" y2="10"/>
+            <line x1="10" y1="18" x2="38" y2="18"/>
+            <line x1="10" y1="26" x2="30" y2="26"/>
+          </g>
+
+          <text x="137" y="273" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#8F5A42" font-weight="600">Ramp</text>
+          <text x="137" y="293" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#8F5A42" font-weight="600">Bill.com · Expensify</text>
+          <line x1="92" y1="307" x2="182" y2="307" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="137" y="324" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#6C7E68">Brex · Divvy · Concur</text>
+          <text x="137" y="342" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#6C7E68">Avalara · Tax1099</text>
+        </g>
+
+        <line x1="240" y1="255" x2="262" y2="255" stroke="#6C7E68" stroke-width="1.5" marker-end="url(#mainArrow)"/>
+
+        <!-- ═══ STAGE 2: PAYROLL · HR · EQUITY ═══ -->
+        <g>
+          <rect x="265" y="150" width="195" height="210" rx="10" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+          <rect x="265" y="150" width="195" height="34" fill="#DDE3D6" stroke="#D4B8AD" stroke-width="1"/>
+          <text x="362" y="173" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2.5" fill="#2A2722" font-weight="600">PAYROLL · HR · EQUITY</text>
+
+          <g transform="translate(343, 198)" fill="none" stroke="#8F5A42" stroke-width="1.4">
+            <circle cx="10" cy="8" r="6"/>
+            <path d="M 0 36 Q 0 20 10 20 Q 20 20 20 36"/>
+            <circle cx="28" cy="10" r="5"/>
+            <path d="M 20 36 Q 20 24 28 24 Q 36 24 36 36"/>
+          </g>
+
+          <text x="362" y="275" text-anchor="middle" font-family="Source Serif 4, serif" font-size="15" fill="#8F5A42" font-weight="600">Gusto · Carta</text>
+          <line x1="317" y1="292" x2="407" y2="292" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="362" y="314" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#6C7E68">ADP · Paycom · Paycor</text>
+          <text x="362" y="332" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#6C7E68">Rippling · Justworks</text>
+        </g>
+
+        <line x1="465" y1="255" x2="487" y2="255" stroke="#6C7E68" stroke-width="1.5" marker-end="url(#mainArrow)"/>
+
+        <!-- ═══ STAGE 3: REVENUE · INDUSTRY ═══ -->
+        <g>
+          <rect x="490" y="150" width="195" height="210" rx="10" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+          <rect x="490" y="150" width="195" height="34" fill="#DDE3D6" stroke="#D4B8AD" stroke-width="1"/>
+          <text x="587" y="173" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2.5" fill="#2A2722" font-weight="600">REVENUE · INDUSTRY</text>
+
+          <g transform="translate(565, 198)" fill="none" stroke="#8F5A42" stroke-width="1.4">
+            <path d="M 4 10 L 4 38 L 40 38 L 40 10 Z"/>
+            <path d="M 12 10 Q 12 0 22 0 Q 32 0 32 10"/>
+            <line x1="10" y1="18" x2="34" y2="18" opacity="0.5"/>
+          </g>
+
+          <text x="587" y="275" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#6C7E68">Shopify · Amazon</text>
+          <text x="587" y="295" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#6C7E68">Cin7 / Katana</text>
+          <line x1="542" y1="310" x2="632" y2="310" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="587" y="330" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" fill="#A39C8B" font-style="italic">Toast / Square (POS)</text>
+        </g>
+
+        <line x1="690" y1="255" x2="712" y2="255" stroke="#6C7E68" stroke-width="1.5" marker-end="url(#mainArrow)"/>
+
+        <!-- ═══ STAGE 4: CLOSE & OPERATIONS ═══ -->
+        <g>
+          <rect x="715" y="150" width="195" height="210" rx="10" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+          <rect x="715" y="150" width="195" height="34" fill="#DDE3D6" stroke="#D4B8AD" stroke-width="1"/>
+          <text x="812" y="173" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#2A2722" font-weight="600">CLOSE &amp; OPERATIONS</text>
+
+          <g transform="translate(794, 198)" fill="none" stroke="#8F5A42" stroke-width="1.4">
+            <rect x="0" y="0" width="38" height="44" rx="2"/>
+            <rect x="4" y="6" width="6" height="6"/>
+            <path d="M 5 9 L 7 11 L 10 7" stroke-width="1.2"/>
+            <line x1="14" y1="10" x2="32" y2="10"/>
+            <rect x="4" y="18" width="6" height="6"/>
+            <path d="M 5 21 L 7 23 L 10 19" stroke-width="1.2"/>
+            <line x1="14" y1="22" x2="32" y2="22"/>
+            <rect x="4" y="30" width="6" height="6"/>
+            <line x1="14" y1="34" x2="30" y2="34"/>
+          </g>
+
+          <text x="812" y="270" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#8F5A42" font-weight="600">Monday.com</text>
+          <text x="812" y="290" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#8F5A42" font-weight="600">Asana</text>
+          <line x1="767" y1="304" x2="857" y2="304" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="812" y="322" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#6C7E68">FloQast · Notion</text>
+          <text x="812" y="340" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#6C7E68">Scribe · Sheets</text>
+        </g>
+
+        <line x1="915" y1="255" x2="937" y2="255" stroke="#6C7E68" stroke-width="1.5" marker-end="url(#mainArrow)"/>
+
+        <!-- ═══ STAGE 5: THE GENERAL LEDGER (terracotta hub) ═══ -->
+        <g filter="url(#hubShadow)">
+          <rect x="940" y="120" width="240" height="270" rx="12" fill="url(#hubGrad)"/>
+          <rect x="940" y="120" width="240" height="40" fill="#8F5A42"/>
+          <text x="1060" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="3" fill="#F2DDD2" font-weight="600">THE GENERAL LEDGER</text>
+
+          <g transform="translate(1034, 178)" fill="none" stroke="#F2DDD2" stroke-width="1.6">
+            <path d="M 2 4 L 2 34 L 26 30 L 50 34 L 50 4 L 26 8 Z"/>
+            <line x1="26" y1="8" x2="26" y2="30"/>
+            <line x1="8" y1="14" x2="22" y2="12" opacity="0.6"/>
+            <line x1="8" y1="20" x2="22" y2="18" opacity="0.6"/>
+            <line x1="8" y1="26" x2="20" y2="24" opacity="0.6"/>
+            <line x1="30" y1="12" x2="44" y2="14" opacity="0.6"/>
+            <line x1="30" y1="18" x2="44" y2="20" opacity="0.6"/>
+            <line x1="30" y1="24" x2="42" y2="26" opacity="0.6"/>
+          </g>
+
+          <text x="1060" y="258" text-anchor="middle" font-family="Source Serif 4, serif" font-size="19" font-style="italic" fill="#FDFAF4" font-weight="500">NetSuite</text>
+          <text x="1060" y="286" text-anchor="middle" font-family="Source Serif 4, serif" font-size="19" font-style="italic" fill="#FDFAF4" font-weight="500">QuickBooks Online</text>
+          <text x="1060" y="314" text-anchor="middle" font-family="Source Serif 4, serif" font-size="19" font-style="italic" fill="#FDFAF4" font-weight="500">QuickBooks Desktop</text>
+          <line x1="1010" y1="332" x2="1110" y2="332" stroke="#F2DDD2" stroke-width="0.5" opacity="0.5"/>
+          <text x="1060" y="354" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#F2DDD2" font-style="italic" opacity="0.85">Xero · Oracle/SAP</text>
+          <text x="1060" y="372" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#F2DDD2" font-style="italic" opacity="0.85">Workday Financials</text>
+        </g>
+
+        <!-- ═══ AI · CONTINUOUS IMPROVEMENT ═══ -->
+        <g>
+          <rect x="90" y="490" width="770" height="170" rx="12" fill="#F2DDD2" stroke="#8A9A84" stroke-width="1.5"/>
+          <rect x="90" y="490" width="770" height="34" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1.5"/>
+
+          <g transform="translate(110, 501)" fill="none" stroke="#6C7E68" stroke-width="1.2">
+            <path d="M 6 0 L 6 12 M 0 6 L 12 6 M 2 2 L 10 10 M 10 2 L 2 10"/>
+          </g>
+
+          <text x="475" y="513" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2.5" fill="#2A2722" font-weight="600">AI · CONTINUOUS IMPROVEMENT</text>
+
+          <text x="475" y="556" text-anchor="middle" font-family="Source Serif 4, serif" font-size="18" fill="#8F5A42" font-weight="600" font-style="italic">ChatGPT  ·  Claude</text>
+          <text x="475" y="585" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#A39C8B" font-style="italic">Copilot · Notion AI</text>
+          <line x1="375" y1="603" x2="575" y2="603" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="475" y="625" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#6C7E68" font-style="italic">augments every stage — turning insight into the next cycle's improvement</text>
+        </g>
+
+        <!-- ═══ FP&A · REPORTING ═══ -->
+        <g>
+          <rect x="940" y="490" width="240" height="170" rx="12" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+          <rect x="940" y="490" width="240" height="34" fill="#DDE3D6" stroke="#D4B8AD" stroke-width="1"/>
+          <text x="1060" y="513" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2" fill="#2A2722" font-weight="600">FP&amp;A · REPORTING</text>
+
+          <g transform="translate(1040, 540)" fill="none" stroke="#8F5A42" stroke-width="1.4">
+            <rect x="0" y="28" width="7" height="14"/>
+            <rect x="11" y="20" width="7" height="22"/>
+            <rect x="22" y="12" width="7" height="30"/>
+            <rect x="33" y="4" width="7" height="38"/>
+            <line x1="-2" y1="44" x2="42" y2="44"/>
+          </g>
+
+          <text x="1060" y="608" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#8F5A42" font-weight="600">Excel · PowerPoint</text>
+          <line x1="1010" y1="620" x2="1110" y2="620" stroke="#D4B8AD" stroke-width="0.4" opacity="0.6"/>
+          <text x="1060" y="640" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#6C7E68">Power BI · Tableau · Fathom</text>
+        </g>
+
+        <!-- ═══ CLOCKWISE FEEDBACK LOOP (terracotta dashed) ═══ -->
+        <!-- 1. GL → FP&A -->
+        <line x1="1060" y1="395" x2="1060" y2="485"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+        <text x="1075" y="442" font-family="Source Serif 4, serif" font-size="11" font-style="italic" fill="#8F5A42">reports off of</text>
+
+        <!-- 2. FP&A → AI -->
+        <line x1="935" y1="575" x2="868" y2="575"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+        <text x="900" y="568" text-anchor="middle" font-family="Source Serif 4, serif" font-size="10" font-style="italic" fill="#8F5A42">feeds</text>
+
+        <!-- 3. AI → bus line -->
+        <line x1="475" y1="485" x2="475" y2="430"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4"/>
+
+        <!-- 4. Bus line across inputs -->
+        <line x1="137" y1="430" x2="812" y2="430"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4"/>
+
+        <!-- 5. Vertical arrows up to each input -->
+        <line x1="137" y1="430" x2="137" y2="365"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+        <line x1="362" y1="430" x2="362" y2="365"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+        <line x1="587" y1="430" x2="587" y2="365"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+        <line x1="812" y1="430" x2="812" y2="365"
+              stroke="#B97A5E" stroke-width="1.5" opacity="0.75"
+              stroke-dasharray="6 4" marker-end="url(#loopArrow)"/>
+
+        <!-- Loop label -->
+        <text x="475" y="420" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" font-style="italic" fill="#8F5A42">↻ insights inform the next cycle</text>
+
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════ SECTION 2 · CASE STUDIES ═══════ -->
+  <section class="section">
+    <div class="section-eyebrow">Section Two · Case Studies</div>
+    <h2 class="section-h">The problem I walked into, the thing I built, and <em>what changed</em> because of it.</h2>
+
+    <div class="cases">
+
+      <!-- ── CASE 1 ── -->
+      <article class="case">
+        <div class="case-eyebrow">Case Study 01 &nbsp;·&nbsp; Informa</div>
+        <h2 class="case-title">A sales dashboard the sales team <em>actually opened</em>.</h2>
+        <p class="case-tagline">An interactive pivot tool that turned scattered performance data into the team's daily reference.</p>
+
+        <div class="case-block">
+          <div class="case-block-label">The Problem</div>
+          <div class="case-block-body">
+            <p>There was nothing in place. The sales team was flying blind. To understand their own performance, reps had to piece data together from multiple systems on their own time — most didn't, and leadership was making calls without a shared source of truth.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Solution</div>
+          <div class="case-diagram">
+            <svg viewBox="0 0 580 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="cArrow1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#6C7E68"/>
+                </marker>
+              </defs>
+
+              <!-- INPUTS (scattered sources) -->
+              <g>
+                <rect x="20" y="40" width="130" height="38" rx="6" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+                <text x="85" y="64" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">CRM exports</text>
+              </g>
+              <g>
+                <rect x="20" y="100" width="130" height="38" rx="6" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+                <text x="85" y="124" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">Quota targets</text>
+              </g>
+              <g>
+                <rect x="20" y="160" width="130" height="38" rx="6" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+                <text x="85" y="184" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">Order history</text>
+              </g>
+
+              <!-- ARROWS to consolidation -->
+              <line x1="155" y1="59" x2="225" y2="100" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow1)"/>
+              <line x1="155" y1="119" x2="225" y2="119" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow1)"/>
+              <line x1="155" y1="179" x2="225" y2="138" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow1)"/>
+
+              <!-- CONSOLIDATION HUB -->
+              <g>
+                <rect x="230" y="90" width="130" height="58" rx="8" fill="#B97A5E" stroke="#8F5A42" stroke-width="1"/>
+                <text x="295" y="115" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#F2DDD2" font-weight="600">PIVOT LOGIC</text>
+                <text x="295" y="135" text-anchor="middle" font-family="Source Serif 4, serif" font-size="11" font-style="italic" fill="#FDFAF4">consolidate · filter · slice</text>
+              </g>
+
+              <!-- ARROW to outputs -->
+              <line x1="365" y1="119" x2="425" y2="119" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow1)"/>
+
+              <!-- SELF-SERVE OUTPUTS -->
+              <g>
+                <rect x="430" y="60" width="130" height="38" rx="6" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1"/>
+                <text x="495" y="84" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">YTD vs. prior years</text>
+              </g>
+              <g>
+                <rect x="430" y="105" width="130" height="38" rx="6" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1"/>
+                <text x="495" y="129" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">New · Lost · Grew</text>
+              </g>
+              <g>
+                <rect x="430" y="150" width="130" height="38" rx="6" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1"/>
+                <text x="495" y="174" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722">Run rate · commissions</text>
+              </g>
+
+              <!-- LABELS -->
+              <text x="85" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#A39C8B" font-weight="600">SCATTERED INPUTS</text>
+              <text x="495" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#A39C8B" font-weight="600">SELF-SERVE VIEWS</text>
+            </svg>
+            <p class="case-diagram-caption">Scattered systems in. One view per question, on demand.</p>
+          </div>
+          <div class="case-block-body">
+            <p>I built a dynamic, interactive pivot tool that pulled scattered data into one place. Reps could see how they tracked against YTD sales versus the last two years, break down their book by customers who were new, lost, grew, or reduced — quantified in dollars and percentage — and roll the same view up to team or individual level for goals, timing, commissions, and run rate.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Impact</div>
+          <div class="case-block-body">
+            <p>The tool became more than a way to track performance. It surfaced friendly competition between reps, gave management a decision-making reference in weekly meetings, and — through the prior-year baseline — let the team understand the <em>why</em> behind the numbers, not just the what.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CASE 2 ── -->
+      <article class="case">
+        <div class="case-eyebrow">Case Study 02 &nbsp;·&nbsp; OneTogether Solutions</div>
+        <h2 class="case-title">A monthly close checklist that <em>runs itself</em>.</h2>
+        <p class="case-tagline">Auto-repeating tasks, consistent deadlines, no rebuilding the list every cycle.</p>
+
+        <div class="case-block">
+          <div class="case-block-label">The Problem</div>
+          <div class="case-block-body">
+            <p>When I joined OneTogether Solutions, there was no close process and no checklist. The books were still run on cash basis. There were no deadlines — close happened whenever it happened, which was typically 30 days after month end.</p>
+            <p>I'd run close checklists in Excel before, and that would have worked. But Excel meant rebuilding the list every month, chasing status updates, and confirming what was done.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Solution</div>
+          <div class="case-metrics">
+            <div class="case-metric">
+              <div class="case-metric-label">Close Days</div>
+              <div class="case-metric-value">Undefined <em>→</em> <span class="case-metric-after">10</span></div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-label">Recurring Tasks</div>
+              <div class="case-metric-value">One-offs <em>→</em> <span class="case-metric-after">100%</span></div>
+            </div>
+            <div class="case-metric">
+              <div class="case-metric-label">Missed Deadlines</div>
+              <div class="case-metric-value">Routine <em>→</em> <span class="case-metric-after">Non-issue</span></div>
+            </div>
+          </div>
+          <div class="case-block-body">
+            <p>I built a Monday.com board for each entity with assignees, business-day-specific due dates, and a step-by-step order. When a task is marked complete, it automatically rolls forward to the next month — no rebuilding, no copy-paste, no constant follow-up.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Impact</div>
+          <div class="case-block-body">
+            <p>Close became <em>routine</em> instead of reactive. The system eliminated back-and-forth communication, removed tedious repetition, and made onboarding new accountants and clients a non-event — they pick up an existing checklist instead of inheriting someone else's process from memory.</p>
+            <p>It also created an audit trail of close activities — who completed what and when, who approved what and when — built into the workflow rather than reconstructed after the fact.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── CASE 3 ── -->
+      <article class="case">
+        <div class="case-eyebrow">Case Study 03 &nbsp;·&nbsp; AVL Client &nbsp;·&nbsp; Langston (Marketing Agency)</div>
+        <h2 class="case-title">A revenue recognition engine that fixed <em>the timing of the money</em>.</h2>
+        <p class="case-tagline">Milestone billings going in, accurate period-by-period revenue coming out — with the deferral and accrual math automated underneath.</p>
+
+        <div class="case-block">
+          <div class="case-block-label">The Problem</div>
+          <div class="case-block-body">
+            <p>Langston was billing client work in milestones — and recognizing revenue when those milestones hit AR. The trouble: their work didn't happen in milestone-shaped chunks. A campaign billed at kickoff might take months of effort to deliver, so revenue was lumpy, expenses didn't match the periods they belonged to, and the financial story you'd tell from the P&amp;L wasn't the financial story of the business.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Solution</div>
+          <div class="case-diagram">
+            <svg viewBox="0 0 580 240" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="cArrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                  <path d="M0,0 L10,5 L0,10 z" fill="#6C7E68"/>
+                </marker>
+              </defs>
+
+              <!-- INPUT: Milestone billings -->
+              <g>
+                <rect x="20" y="100" width="140" height="50" rx="8" fill="#F2DDD2" stroke="#D4B8AD" stroke-width="1"/>
+                <text x="90" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#6C7E68" font-weight="600">INPUT</text>
+                <text x="90" y="140" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" fill="#2A2722" font-style="italic">Milestone billings</text>
+              </g>
+
+              <line x1="165" y1="125" x2="195" y2="125" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow3)"/>
+
+              <!-- HUB: POC engine -->
+              <g>
+                <rect x="200" y="80" width="180" height="90" rx="8" fill="#B97A5E" stroke="#8F5A42" stroke-width="1"/>
+                <text x="290" y="103" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#F2DDD2" font-weight="600">PERCENT-COMPLETE ENGINE</text>
+                <text x="290" y="128" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#FDFAF4" font-style="italic">accrual when ahead of billing</text>
+                <text x="290" y="148" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#FDFAF4" font-style="italic">deferral when behind</text>
+              </g>
+
+              <line x1="385" y1="125" x2="415" y2="125" stroke="#6C7E68" stroke-width="1.2" marker-end="url(#cArrow3)"/>
+
+              <!-- OUTPUT: Period-by-period revenue + rec schedules -->
+              <g>
+                <rect x="420" y="60" width="140" height="50" rx="8" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1"/>
+                <text x="490" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#6C7E68" font-weight="600">REVENUE</text>
+                <text x="490" y="100" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#2A2722">Period-by-period</text>
+              </g>
+              <g>
+                <rect x="420" y="140" width="140" height="50" rx="8" fill="#DDE3D6" stroke="#8A9A84" stroke-width="1"/>
+                <text x="490" y="162" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" letter-spacing="2" fill="#6C7E68" font-weight="600">SCHEDULES</text>
+                <text x="490" y="180" text-anchor="middle" font-family="Source Serif 4, serif" font-size="12" fill="#2A2722">Tied to GL · audit-ready</text>
+              </g>
+
+              <!-- Connectors from hub to two outputs -->
+              <line x1="385" y1="115" x2="415" y2="85" stroke="#6C7E68" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
+              <line x1="385" y1="135" x2="415" y2="165" stroke="#6C7E68" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.6"/>
+
+              <text x="290" y="35" text-anchor="middle" font-family="Source Serif 4, serif" font-size="13" font-style="italic" fill="#2A2722">Billing logic and recognition logic, finally separate.</text>
+              <text x="290" y="220" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" letter-spacing="2" fill="#A39C8B" font-weight="500">PER-PROJECT, ALL IN ONE PLACE</text>
+            </svg>
+            <p class="case-diagram-caption">Excel formulas doing the math underneath. Monthly judgment calls on top.</p>
+          </div>
+          <div class="case-block-body">
+            <p>I built a per-project revenue recognition workbook in Excel. For each active project, formulas calculated percent-complete, generated accruals when work ran ahead of billing, generated deferrals when billing ran ahead of work, and produced reconciliation schedules that tied directly to the GL.</p>
+            <p>The math ran itself. What I drove monthly was the judgment layer — confirming percent-complete with project leads, flagging anomalies, adjusting for scope changes. Automating the calculation freed up time to actually <em>think</em> about the revenue, instead of recalculating it.</p>
+          </div>
+        </div>
+
+        <div class="case-block">
+          <div class="case-block-label">The Impact</div>
+          <div class="case-block-body">
+            <p>The financials finally told the truth about the business. Revenue and expenses lined up to the right periods per GAAP, audit went smoother because the schedules tied cleanly to the GL, and the monthly process took a fraction of what it would have without the automation.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ── CLOSING PULL QUOTES ── -->
+    <div class="closing-quotes">
+      <blockquote class="pullquote">
+        <p class="pullquote-text">What I valued most about working with Emma was that she could take all the financial detail and translate it into a story the board could actually use. She made the numbers click.</p>
+        <div class="pullquote-attr"><span class="pullquote-attr-name">CEO</span> &nbsp;·&nbsp; Blue Moose of Boulder</div>
+      </blockquote>
+
+      <blockquote class="pullquote">
+        <p class="pullquote-text">Emma's technical accounting skills are an 11 out of 10.</p>
+        <div class="pullquote-attr"><span class="pullquote-attr-name">CFO</span> &nbsp;·&nbsp; OneTogether Solutions</div>
+      </blockquote>
+    </div>
+  </section>
+
+  <footer>
+    Boulder, Colorado · 2026
+  </footer>
+
+</div>
+
+</body>
+</html>

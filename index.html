@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emma Getty</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Dusty blush base — pushed warmer/pinker to read correctly on mobile */
+    --paper:     #EBD2C8;
+    --paper-deep:#DFC0B4;
+    --ink:       #2A2722;
+    --ink-mute:  #6B6557;
+    --ink-faint: #A39C8B;
+    --rule:      #D4B8AD;
+    /* Sage stays as the classic counterpoint */
+    --sage:      #8A9A84;
+    --sage-deep: #6C7E68;
+    --sage-pale: #DDE3D6;
+    /* Red rock — warm terracotta sandstone */
+    --rock:      #B97A5E;
+    --rock-deep: #8F5A42;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    /* Topographic trail map texture:
+       Layer 1 — concentric contour loops (nested closed curves around peaks)
+       Layer 2 — flowing contour lines (longer ridge-following paths)
+       Layer 3 — base tonal mottling (paper feel)
+       Layer 4 — fine grain on top
+       Lines are thin (0.5) and low opacity so text remains the focus. */
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cg fill='none' stroke='%238F5A42' stroke-width='0.5' opacity='0.22' stroke-linecap='round' stroke-linejoin='round'%3E%3C!-- Concentric peak group A --%3E%3Cpath d='M 130 140 Q 165 122 195 138 Q 215 162 198 188 Q 168 200 138 188 Q 118 165 130 140 Z'/%3E%3Cpath d='M 110 125 Q 158 100 210 122 Q 235 158 215 200 Q 165 218 122 200 Q 95 165 110 125 Z'/%3E%3Cpath d='M 90 110 Q 152 78 225 108 Q 256 152 235 215 Q 165 240 105 215 Q 70 168 90 110 Z'/%3E%3C!-- Concentric basin group B --%3E%3Cpath d='M 430 380 Q 460 368 480 385 Q 488 405 472 420 Q 445 425 425 415 Q 418 395 430 380 Z'/%3E%3Cpath d='M 412 365 Q 458 348 495 372 Q 510 405 490 432 Q 442 442 412 428 Q 398 398 412 365 Z'/%3E%3Cpath d='M 392 348 Q 455 325 510 358 Q 532 402 505 445 Q 440 460 395 442 Q 375 400 392 348 Z'/%3E%3C!-- Concentric peak group C (smaller, top right) --%3E%3Cpath d='M 470 90 Q 495 80 515 95 Q 522 115 508 128 Q 482 132 465 122 Q 458 105 470 90 Z'/%3E%3Cpath d='M 455 75 Q 492 60 528 82 Q 540 110 522 138 Q 482 145 455 132 Q 442 108 455 75 Z'/%3E%3C!-- Flowing contour lines (long ridge-following paths) --%3E%3Cpath d='M 0 280 Q 80 268 165 282 Q 245 298 318 285 Q 395 270 478 290 Q 545 305 600 295'/%3E%3Cpath d='M 0 320 Q 75 305 158 322 Q 240 338 315 320 Q 395 305 482 328 Q 545 345 600 335'/%3E%3Cpath d='M 0 510 Q 90 495 175 510 Q 260 525 340 508 Q 425 492 510 510 Q 565 525 600 515'/%3E%3Cpath d='M 0 545 Q 80 532 168 548 Q 252 562 332 545 Q 420 528 508 548 Q 568 562 600 552'/%3E%3Cpath d='M 0 25 Q 95 12 185 25 Q 270 38 350 22 Q 435 8 525 25 Q 575 38 600 30'/%3E%3C/g%3E%3C/svg%3E"),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='tbase'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.02' numOctaves='3' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='1.2' intercept='-0.15'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Cfilter id='tfine'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2' stitchTiles='stitch' seed='18'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='600' filter='url(%23tbase)' opacity='0.08' fill='%238F5A42'/%3E%3Crect width='600' height='600' filter='url(%23tfine)' opacity='0.05'/%3E%3C/svg%3E");
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* ────────────────────────────────────────────
+     LAYOUT — page is a 2-column grid:
+     trail rail (left) + content (right)
+     The trail SVG sits sticky in the left column
+     ──────────────────────────────────────────── */
+
+  .page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 2.5rem;
+    position: relative;
+  }
+
+  /* ── TRAIL RAIL ─────────────────────────── */
+  .trail-rail {
+    position: relative;
+  }
+  .trail-svg {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  /* ── CONTENT COLUMN ─────────────────────── */
+  .content {
+    min-width: 0;
+    padding: 4rem 0 2rem;
+  }
+
+  /* ── HEADER ── */
+  .top {
+    padding: 1.5rem 0 0;
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.25rem;
+    gap: 2rem;
+  }
+  .top-mark {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    flex-shrink: 0;
+  }
+  .top-mark a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .top-nav {
+    display: flex;
+    gap: 1.75rem;
+    align-items: baseline;
+    flex: 1;
+    justify-content: center;
+  }
+  .top-nav a {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-mute);
+    text-decoration: none;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .top-nav a:hover {
+    color: var(--ink);
+  }
+  .top-nav a.active {
+    color: var(--ink);
+    border-bottom-color: var(--rock);
+  }
+  .top-meta {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ── TRAILHEAD / HERO ──────────────────────── */
+  .stop {
+    position: relative;
+    padding: 3rem 0 5rem;
+    scroll-margin-top: 2rem;
+  }
+
+  .stop-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--sage-deep);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .stop-tag::before {
+    content: '';
+    width: 18px;
+    height: 1px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  /* ── HERO ── */
+  .trailhead {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+  }
+
+  .hero-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 4px solid var(--paper);
+    box-shadow: 0 0 0 1px var(--rule), 0 8px 24px rgba(42, 39, 34, 0.08);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .hero-greet {
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--sage-deep);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+  }
+
+  .hero-creds {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-tag-row {
+    margin-bottom: 2rem;
+  }
+
+  .hero-tag-pill {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sage-deep);
+    background: var(--sage-pale);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+
+  .hero-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    max-width: 560px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .hero-deck {
+    font-size: 17px;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-byline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.5rem;
+    align-items: center;
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+  .hero-byline strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .hero-byline a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 1px;
+    transition: all 0.15s;
+  }
+  .hero-byline a:hover {
+    color: var(--sage-deep);
+    border-bottom-color: var(--sage-deep);
+  }
+  .hero-byline-divider {
+    color: var(--rule);
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .stop-h {
+    font-family: 'Source Serif 4', serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.012em;
+    margin-bottom: 2rem;
+    max-width: 560px;
+  }
+  .stop-h em { font-style: italic; color: var(--sage-deep); }
+
+  /* ── BIO ── */
+  .bio {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    max-width: 560px;
+    font-weight: 400;
+  }
+  .bio p + p { margin-top: 1.25rem; }
+
+  /* ── STRENGTHS ── */
+  .strengths {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: -0.5rem;
+  }
+  .strength {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .strength:first-child { border-top: none; padding-top: 0.5rem; }
+  .strength-num {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--sage);
+  }
+  .strength-title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .strength-body {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-mute);
+    max-width: 480px;
+  }
+
+  /* ── ACCOMPLISHMENTS / SUMMITS ── */
+  .summit {
+    padding: 2.5rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .summit:first-of-type { border-top: none; padding-top: 0.5rem; }
+
+  .summit-marker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--sage-deep);
+    margin-bottom: 1rem;
+  }
+  .summit-marker .triangle {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid var(--sage);
+  }
+  .summit-elev {
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin-left: 6px;
+  }
+
+  .summit-h {
+    font-family: 'Source Serif 4', serif;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.32;
+    letter-spacing: -0.005em;
+    margin-bottom: 1rem;
+    max-width: 560px;
+  }
+  .summit-h em { font-style: italic; color: var(--sage-deep); }
+  .summit-body {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-mute);
+    max-width: 560px;
+  }
+
+  /* ── CAREER (switchback list) ── */
+  .career-list {
+    margin-top: -0.5rem;
+  }
+  .career-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .career-row:last-child { border-bottom: none; }
+  .career-year {
+    font-size: 12px;
+    color: var(--ink-faint);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .career-role-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .career-role-where {
+    font-size: 13px;
+    color: var(--ink-mute);
+  }
+
+  /* ── EDUCATION ── */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: -0.5rem;
+  }
+  .edu-degree {
+    font-family: 'Source Serif 4', serif;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .edu-school {
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .edu-list {
+    list-style: none;
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.8;
+  }
+  .edu-list li::before {
+    content: '— ';
+    color: var(--sage);
+  }
+
+  /* ── SUMMIT (CTA) ── */
+  .endpoint {
+    padding: 4rem 0 5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .endpoint-h {
+    font-family: 'Source Serif 4', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    margin-bottom: 1.5rem;
+    max-width: 560px;
+  }
+  .endpoint-h em { font-style: italic; color: var(--sage-deep); }
+  .endpoint-sub {
+    font-size: 16px;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    max-width: 500px;
+    margin-bottom: 2.25rem;
+  }
+  .endpoint-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFF;
+    background: var(--rock);
+    padding: 13px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background 0.18s, transform 0.15s;
+    box-shadow: 0 2px 8px rgba(143, 90, 66, 0.18);
+  }
+  .endpoint-link:hover {
+    background: var(--rock-deep);
+    transform: translateY(-1px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 0 4rem;
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* ── TRAIL SVG STYLING ── */
+  .rock-shape {
+    fill: var(--rock);
+    opacity: 0.42;
+  }
+  .rock-shadow {
+    fill: var(--rock-deep);
+    opacity: 0.28;
+  }
+  .rock-line {
+    fill: none;
+    stroke: var(--rock-deep);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+    opacity: 0.4;
+  }
+  .trail-line {
+    fill: none;
+    stroke: var(--sage);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+  }
+  .trail-shadow {
+    fill: none;
+    stroke: var(--sage);
+    stroke-width: 0.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.25;
+  }
+  .trail-marker-circle {
+    fill: var(--paper);
+    stroke: var(--sage-deep);
+    stroke-width: 1.5;
+  }
+  .trail-marker-dot {
+    fill: var(--sage-deep);
+  }
+  .trail-elev-line {
+    stroke: var(--sage);
+    stroke-width: 1;
+    opacity: 0.5;
+  }
+  .trail-elev-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    fill: var(--sage-deep);
+    letter-spacing: 0.08em;
+  }
+  .trail-elev-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 7px;
+    font-weight: 500;
+    fill: var(--ink-faint);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .page {
+      grid-template-columns: 50px 1fr;
+      gap: 1.25rem;
+      padding: 0 1.25rem;
+    }
+    .trail-svg {
+      height: 100vh;
+    }
+    .trail-elev-text, .trail-elev-sub { display: none; }
+    /* Quiet the rock further on mobile so it doesn't crowd the narrow rail */
+    .rock-shape { opacity: 0.32; }
+    .rock-shadow { opacity: 0.2; }
+    .rock-line { opacity: 0.3; }
+    .content { padding: 2rem 0 1rem; }
+    .top { margin-bottom: 3rem; gap: 1rem; }
+    .top-meta { display: none; }
+    .top-nav { gap: 1.25rem; }
+    .top-nav a { font-size: 11px; letter-spacing: 0.14em; }
+    .hero-title { font-size: 36px; }
+    .hero-deck { font-size: 16px; }
+    .stop-h { font-size: 24px; }
+    .summit-h { font-size: 20px; }
+    .strength { grid-template-columns: 40px 1fr; gap: 1rem; }
+    .career-row { grid-template-columns: 80px 1fr; gap: 1rem; }
+    .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .endpoint-h { font-size: 26px; }
+    .trailhead { padding-bottom: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ═══════ TRAIL RAIL — SVG SPINE ═══════ -->
+  <aside class="trail-rail" aria-hidden="true">
+    <svg class="trail-svg" viewBox="0 0 100 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!--
+        Hand-crafted ridgeline path with deliberate irregularity.
+        Reads top-to-bottom as a topographic profile, like looking
+        at a mountain ridge from the side. Markers correspond to
+        sections of the page.
+      -->
+
+      <!-- ─────────────────────────────────────────
+           RED ROCK BACKDROP (Flatirons-inspired)
+           A slabby sandstone silhouette that sits to
+           the LEFT of the trail axis. The sage trail
+           line reads as running along the ridge edge.
+           Lower opacity so it grounds without dominating.
+           ───────────────────────────────────────── -->
+
+      <!-- Rock body — main slabby silhouette on the left -->
+      <path class="rock-shape" d="
+        M 0 60
+        L 18 30
+        L 28 55
+        L 22 95
+        L 35 130
+        L 30 175
+        L 42 215
+        L 36 260
+        L 44 305
+        L 38 350
+        L 46 395
+        L 40 442
+        L 44 490
+        L 38 540
+        L 46 588
+        L 40 638
+        L 44 685
+        L 38 730
+        L 42 778
+        L 36 825
+        L 40 872
+        L 32 920
+        L 0 970
+        Z
+      "/>
+
+      <!-- Rock shadow / inner crevices — narrower, deeper, gives slabby depth -->
+      <path class="rock-shadow" d="
+        M 0 100
+        L 12 75
+        L 20 110
+        L 14 150
+        L 24 188
+        L 18 235
+        L 28 275
+        L 22 320
+        L 30 365
+        L 24 410
+        L 32 458
+        L 26 505
+        L 32 552
+        L 26 600
+        L 32 648
+        L 28 695
+        L 32 742
+        L 26 788
+        L 30 835
+        L 24 882
+        L 28 925
+        L 0 970
+        Z
+      "/>
+
+      <!-- Faint stratification lines on the rock — horizontal sediment layers -->
+      <line class="rock-line" x1="6" y1="180" x2="38" y2="195"/>
+      <line class="rock-line" x1="4" y1="340" x2="42" y2="358"/>
+      <line class="rock-line" x1="6" y1="500" x2="42" y2="515"/>
+      <line class="rock-line" x1="4" y1="660" x2="40" y2="678"/>
+      <line class="rock-line" x1="6" y1="820" x2="38" y2="838"/>
+
+      <!-- soft echo / shadow line beneath the trail -->
+      <path class="trail-shadow" d="
+        M 50 30
+        L 48 75
+        Q 52 90, 50 110
+        L 53 145
+        Q 47 165, 50 188
+        L 48 220
+        Q 54 245, 50 270
+        L 52 305
+        Q 46 330, 50 355
+        L 49 392
+        Q 53 418, 50 445
+        L 51 478
+        Q 47 502, 50 528
+        L 52 562
+        Q 48 588, 50 615
+        L 49 648
+        Q 53 675, 50 702
+        L 51 738
+        Q 47 762, 50 790
+        L 52 825
+        Q 48 850, 50 878
+        L 50 920
+      " transform="translate(2, 2)"/>
+
+      <!-- main ridgeline -->
+      <path class="trail-line" d="
+        M 50 30
+        L 48 75
+        Q 52 90, 50 110
+        L 53 145
+        Q 47 165, 50 188
+        L 48 220
+        Q 54 245, 50 270
+        L 52 305
+        Q 46 330, 50 355
+        L 49 392
+        Q 53 418, 50 445
+        L 51 478
+        Q 47 502, 50 528
+        L 52 562
+        Q 48 588, 50 615
+        L 49 648
+        Q 53 675, 50 702
+        L 51 738
+        Q 47 762, 50 790
+        L 52 825
+        Q 48 850, 50 878
+        L 50 920
+      "/>
+
+      <!-- ── TRAILHEAD MARKER (top, hero) ── -->
+      <g transform="translate(50, 30)">
+        <circle class="trail-marker-circle" r="6"/>
+        <circle class="trail-marker-dot" r="2"/>
+      </g>
+      <text class="trail-elev-text" x="68" y="33">TRAILHEAD</text>
+      <text class="trail-elev-sub" x="68" y="44">Boulder, CO</text>
+
+      <!-- ── STOP 01 — Who I am ── -->
+      <g transform="translate(50, 188)">
+        <circle class="trail-marker-circle" r="5"/>
+      </g>
+      <line class="trail-elev-line" x1="58" y1="188" x2="68" y2="188"/>
+      <text class="trail-elev-text" x="72" y="186">13 YRS</text>
+      <text class="trail-elev-sub" x="72" y="197">in finance</text>
+
+      <!-- ── STOP 02 — What I bring ── -->
+      <g transform="translate(50, 355)">
+        <circle class="trail-marker-circle" r="5"/>
+      </g>
+      <line class="trail-elev-line" x1="58" y1="355" x2="68" y2="355"/>
+      <text class="trail-elev-text" x="72" y="353">12+</text>
+      <text class="trail-elev-sub" x="72" y="364">audits led</text>
+
+      <!-- ── STOP 03 — Selected work / summits ── -->
+      <g transform="translate(50, 528)">
+        <circle class="trail-marker-circle" r="6"/>
+        <circle class="trail-marker-dot" r="2"/>
+      </g>
+      <line class="trail-elev-line" x1="59" y1="528" x2="68" y2="528"/>
+      <text class="trail-elev-text" x="72" y="526">$15M</text>
+      <text class="trail-elev-sub" x="72" y="537">Costco peak</text>
+
+      <!-- ── STOP 04 — Career ── -->
+      <g transform="translate(50, 702)">
+        <circle class="trail-marker-circle" r="5"/>
+      </g>
+      <line class="trail-elev-line" x1="58" y1="702" x2="68" y2="702"/>
+      <text class="trail-elev-text" x="72" y="700">15</text>
+      <text class="trail-elev-sub" x="72" y="711">clients · 8 roles</text>
+
+      <!-- ── STOP 05 — Education ── -->
+      <g transform="translate(50, 825)">
+        <circle class="trail-marker-circle" r="5"/>
+      </g>
+      <line class="trail-elev-line" x1="58" y1="825" x2="68" y2="825"/>
+      <text class="trail-elev-text" x="72" y="823">CPA · MBA</text>
+
+      <!-- ── SUMMIT (endpoint) — small triangle marker ── -->
+      <g transform="translate(50, 920)">
+        <polygon points="0,-9 7,4 -7,4" fill="var(--sage-deep)" stroke="var(--paper)" stroke-width="1"/>
+      </g>
+      <text class="trail-elev-text" x="62" y="918">SUMMIT</text>
+      <text class="trail-elev-sub" x="62" y="929">let's connect</text>
+
+    </svg>
+  </aside>
+
+  <!-- ═══════ CONTENT ═══════ -->
+  <main class="content">
+
+    <header class="top">
+      <div class="top-mark"><a href="/">Emma Getty</a></div>
+      <nav class="top-nav">
+        <a href="/" class="active">About</a>
+        <a href="/work">My Work</a>
+      </nav>
+      <div class="top-meta">Boulder, Colorado</div>
+    </header>
+
+    <!-- ── TRAILHEAD / HERO ── -->
+    <section class="trailhead">
+      <img class="hero-photo" src="IMG_2479.png" alt="Emma Getty" />
+      <p class="hero-greet">Hi, I'm Emma —</p>
+      <p class="hero-creds">CPA &nbsp;·&nbsp; MBA &nbsp;·&nbsp; Director of Finance & Accounting</p>
+      <p class="hero-tag-row"><span class="hero-tag-pill">Open to new roles</span></p>
+      <h1 class="hero-title">Accounting rigor. Operational creativity. Finance leadership built on automation, optimization, and <em>first-principles</em> thinking.</h1>
+      <div class="hero-byline">
+        <a href="https://www.linkedin.com/in/emma-getty-cpa-mba">LinkedIn ↗</a>
+        <span class="hero-byline-divider">·</span>
+        <a href="mailto:ejgetty@gmail.com">ejgetty@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- ── STOP 01 ── -->
+    <section class="stop">
+      <div class="stop-tag">Stop One · Who I am</div>
+      <h2 class="stop-h">A builder by nature — and never quite <em>finished</em>.</h2>
+      <div class="bio">
+        <p>I'm always looking for the next iteration, the next improvement, the thing that could run just a little smoother. It's not restlessness. It's how I'm wired. Calm in chaos, curious by default.</p>
+        <p>I care about what I build and who I build it for. I've spent my career in health, food, and mission-driven businesses because I want the work to matter — not just to the bottom line, but to the world. Professionally, I turn financial chaos into clarity: the processes, the systems, the team, the whole thing. I'm drawn to companies at an inflection point — the ones growing faster than their infrastructure, where there's real work to be done and no playbook to follow.</p>
+        <p>When I'm not in spreadsheets, I'm in the mountains. Boulder isn't just where I live — it's a reflection of how I work: always moving, always looking for the next ridge.</p>
+      </div>
+    </section>
+
+    <!-- ── STOP 02 ── -->
+    <section class="stop">
+      <div class="stop-tag">Stop Two · What I bring</div>
+      <h2 class="stop-h">A complex problem. A team to lead. The trust to build the right <em>solution</em>.</h2>
+      <div class="strengths">
+        <div class="strength">
+          <div class="strength-num">i.</div>
+          <div>
+            <div class="strength-title">Build & Systems</div>
+            <div class="strength-body">Hands-on across NetSuite, QuickBooks, Oracle, SAP, Ramp, and FloQast. I've never inherited a process I didn't eventually rebuild.</div>
+          </div>
+        </div>
+        <div class="strength">
+          <div class="strength-num">ii.</div>
+          <div>
+            <div class="strength-title">Leadership & Communication</div>
+            <div class="strength-body">I build teams that don't need me to function — and I translate the details into the story. CEOs have told me so directly.</div>
+          </div>
+        </div>
+        <div class="strength">
+          <div class="strength-num">iii.</div>
+          <div>
+            <div class="strength-title">FP&A & Modeling</div>
+            <div class="strength-body">Budgets, forecasts, cash flow, revenue recognition — built from scratch, every time.</div>
+          </div>
+        </div>
+        <div class="strength">
+          <div class="strength-num">iv.</div>
+          <div>
+            <div class="strength-title">Audit & Compliance</div>
+            <div class="strength-body">Twelve-plus audits led. I don't just survive them — I build the controls that make them easy.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STOP 03 — SUMMITS ── -->
+    <section class="stop">
+      <div class="stop-tag">Stop Three · Achievements</div>
+      <h2 class="stop-h">Four summits from thirteen years.</h2>
+
+      <article class="summit">
+        <div class="summit-marker"><span class="triangle"></span> Summit One <span class="summit-elev">CPA + MBA</span></div>
+        <h3 class="summit-h">Passed all four CPA exams while working full time. Earned an MBA while running finance for a <em>$15M company</em>.</h3>
+        <p class="summit-body">No break to go back to school. Both at once. Because that's how I'm wired.</p>
+      </article>
+
+      <article class="summit">
+        <div class="summit-marker"><span class="triangle"></span> Summit Two <span class="summit-elev">Blue Moose · Costco</span></div>
+        <h3 class="summit-h">A $6M Costco deal. The real question wasn't whether to take it — it was whether we could <em>survive</em> it.</h3>
+        <p class="summit-body">I built the financial model that answered it: demand planning, inventory, spoilage, cash flow. The company grew from $8M to $15M that year. I wasn't in sales. I was the reason sales was possible.</p>
+      </article>
+
+      <article class="summit">
+        <div class="summit-marker"><span class="triangle"></span> Summit Three <span class="summit-elev">AVL Growth Partners</span></div>
+        <h3 class="summit-h">Fifteen clients across two years. CPG, SaaS, manufacturing, cannabis startups — all <em>different problems</em>.</h3>
+        <p class="summit-body">Cash-to-accrual conversions, system implementations, rebuilt control environments. One client's monthly close went from four weeks to one. The skill isn't industry knowledge. It's reading a company fast and building what it needs.</p>
+      </article>
+
+      <article class="summit">
+        <div class="summit-marker"><span class="triangle"></span> Summit Four <span class="summit-elev">OneTogether Solutions</span></div>
+        <h3 class="summit-h">One entity became <em>five</em>. I built the financial infrastructure that made the growth possible.</h3>
+        <p class="summit-body">Chart of accounts, consolidated reporting, audit-ready close, board-level snapshots. There was no playbook. I wrote it.</p>
+      </article>
+    </section>
+
+    <!-- ── STOP 04 — CAREER ── -->
+    <section class="stop">
+      <div class="stop-tag">Stop Four · Career</div>
+      <h2 class="stop-h">The full path.</h2>
+      <div class="career-list">
+        <div class="career-row">
+          <div class="career-year">2023 — Now</div>
+          <div>
+            <div class="career-role-title">Director, Finance & Accounting</div>
+            <div class="career-role-where">OneTogether Solutions · Boulder, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2026 — Now</div>
+          <div>
+            <div class="career-role-title">Founder</div>
+            <div class="career-role-where">Ridgeline Finance · Boulder, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2020 — 2023</div>
+          <div>
+            <div class="career-role-title">Director / Controller</div>
+            <div class="career-role-where">AVL Growth Partners · Boulder, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2019 — 2020</div>
+          <div>
+            <div class="career-role-title">Director of Finance</div>
+            <div class="career-role-where">Blue Moose of Boulder · Lafayette, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2018 — 2019</div>
+          <div>
+            <div class="career-role-title">Financial Analyst</div>
+            <div class="career-role-where">Informa · Boulder, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2017 — 2018</div>
+          <div>
+            <div class="career-role-title">Accountant</div>
+            <div class="career-role-where">Purely Elizabeth · Boulder, CO</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2015 — 2017</div>
+          <div>
+            <div class="career-role-title">Capital Budget Analyst</div>
+            <div class="career-role-where">Maryland Dept. of Budget & Management · Baltimore, MD</div>
+          </div>
+        </div>
+        <div class="career-row">
+          <div class="career-year">2013 — 2015</div>
+          <div>
+            <div class="career-role-title">Staff Accountant</div>
+            <div class="career-role-where">Sinclair Broadcast Group · Hunt Valley, MD</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STOP 05 — EDUCATION ── -->
+    <section class="stop">
+      <div class="stop-tag">Stop Five · Education</div>
+      <h2 class="stop-h">Where it started.</h2>
+      <div class="edu-grid">
+        <div>
+          <div class="edu-degree">Master of Business Administration</div>
+          <div class="edu-school">CU Leeds · 2018–2020 · GPA 3.71</div>
+          <ul class="edu-list">
+            <li>Entrepreneurship Certificate</li>
+            <li>Second place, Women Founders' Competition</li>
+            <li>Accounting Tutor · MBArk</li>
+          </ul>
+        </div>
+        <div>
+          <div class="edu-degree">B.S. Business Administration</div>
+          <div class="edu-school">UNC Wilmington · 2010–2013 · GPA 3.74</div>
+          <ul class="edu-list">
+            <li>Chancellor's Achievement Award (×2)</li>
+            <li>Dean's List (×5)</li>
+            <li>Study abroad: Marseille, France</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ENDPOINT / SUMMIT — CTA ── -->
+    <section class="endpoint">
+      <div class="stop-tag">Summit · Get in touch</div>
+      <h2 class="endpoint-h">If your company is growing faster than its <em>financial infrastructure</em> — that's where I do my best work.</h2>
+      <p class="endpoint-sub">Open to Director of Finance and Controller roles at mission-driven companies in health, CPG, and SaaS.</p>
+      <a class="endpoint-link" href="mailto:ejgetty@gmail.com">ejgetty@gmail.com →</a>
+    </section>
+
+    <footer>
+      Boulder, Colorado · 2026
+    </footer>
+
+  </main>
+</div>
+
+</body>
+</html>
