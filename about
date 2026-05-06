@@ -96,7 +96,7 @@
   }
 
   /* ── PAGE WRAPPER ────────────────────────────────── */
-  .page { max-width: 880px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .page { max-width: 100%; padding: 0 3rem 6rem; }
 
   /* ── INTRO CARD ──────────────────────────────────── */
   .intro-card {
@@ -110,8 +110,8 @@
   }
 
   .intro-photo {
-    width: 140px;
-    height: 140px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center top;
@@ -641,7 +641,7 @@
       gap: 1.25rem;
       padding: 2rem 1.5rem 1.25rem;
     }
-    .intro-photo { width: 130px; height: 130px; }
+    .intro-photo { width: 160px; height: 160px; }
     .headline-card { margin: 0 1rem 1.25rem; padding: 1.5rem 1.25rem; }
     .headline-card-text { font-size: 16px; }
     .intro-footer {
